@@ -1,0 +1,9 @@
+Third-party notice
+==================
+
+This project includes code derived from **ahooks** (https://github.com/alibaba/hooks),
+Copyright (c) Alibaba and contributors, licensed under the MIT License.
+
+Portions were adapted for **Preact**, internal utilities replace former npm
+runtime dependencies (lodash, dayjs, js-cookie, react-fast-compare, etc.), and
+some tests were adjusted or removed where they depended on React-only tooling.

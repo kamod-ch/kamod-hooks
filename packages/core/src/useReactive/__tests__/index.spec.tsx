@@ -1,0 +1,292 @@
+import { act, fireEvent, render, renderHook } from '@testing-library/preact';
+import { describe, expect, test } from 'vitest';
+import useReactive from '../';
+
+const Demo = () => {
+  const state: {
+    count: number;
+    val: any;
+    foo?: string;
+    arr: number[];
+  } = useReactive({
+    count: 0,
+    val: {
+      val1: {
+        val2: '',
+      },
+    },
+    arr: [1],
+    foo: 'foo',
+  });
+
+  return (
+    <div>
+      <p>
+        counter state.count:<span data-testid="addCount">{state.count}</span>
+      </p>
+      <p>
+        delete property:<span data-testid="deleteProperty">{state.foo}</span>
+      </p>
+
+      <button data-testid="addCountBtn" onClick={() => (state.count += 1)}>
+        state.count++
+      </button>
+      <button data-testid="deletePropertyBtn" onClick={() => delete state.foo}>
+        delete state.foo
+      </button>
+      <button data-testid="subCountBtn" style={{ marginLeft: '50px' }} onClick={() => (state.count -= 1)}>
+        state.count--
+      </button>
+      <br />
+      <br />
+      <p>
+        state.arr: <span data-testid="test-array">{JSON.stringify(state.arr)}</span>
+      </p>
+      <button style={{ marginRight: '10px' }} onClick={() => state.arr.push(1)} data-testid="pushbtn">
+        push
+      </button>
+      <button style={{ marginRight: '10px' }} onClick={() => state.arr.pop()} data-testid="popbtn">
+        pop
+      </button>
+      <button style={{ marginRight: '10px' }} onClick={() => state.arr.shift()} data-testid="shiftbtn">
+        shift
+      </button>
+      <button
+        style={{ marginRight: '10px' }}
+        data-testid="unshiftbtn"
+        onClick={() => state.arr.unshift(2)}
+      >
+        unshift
+      </button>
+      <button style={{ marginRight: '10px' }} data-testid="reverse" onClick={() => state.arr.reverse()}>
+        reverse
+      </button>
+      <button style={{ marginRight: '10px' }} data-testid="sort" onClick={() => state.arr.sort()}>
+        sort
+      </button>
+      <br />
+      <br />
+      <p>nested structure</p>
+      <p data-testid="inputVal1">{state.val.val1.val2}</p>
+      <input
+        data-testid="input1"
+        style={{ width: 220, borderWidth: 1 }}
+        type="text"
+        onChange={(e) => {
+          state.val.val1.val2 = (e.currentTarget as HTMLInputElement).value;
+        }}
+      />
+    </div>
+  );
+};
+
+describe('test useReactive feature', () => {
+  test('test count', () => {
+    const wrap = render(<Demo />);
+
+    const count = wrap.getByTestId('addCount');
+    const addCountBtn = wrap.getByTestId('addCountBtn');
+    const subCountBtn = wrap.getByTestId('subCountBtn');
+
+    act(() => {
+      fireEvent.click(addCountBtn);
+    });
+    expect(count.textContent).toBe('1');
+
+    act(() => {
+      fireEvent.click(addCountBtn);
+      fireEvent.click(addCountBtn);
+    });
+    expect(count.textContent).toBe('3');
+
+    act(() => {
+      fireEvent.click(subCountBtn);
+    });
+    expect(count.textContent).toBe('2');
+
+    act(() => {
+      fireEvent.click(subCountBtn);
+      fireEvent.click(subCountBtn);
+      fireEvent.click(subCountBtn);
+      fireEvent.click(subCountBtn);
+      fireEvent.click(subCountBtn);
+    });
+    expect(count.textContent).toBe('-3');
+  });
+
+  test('test array', () => {
+    const wrap = render(<Demo />);
+    const testArray = wrap.getAllByTestId('test-array')[0];
+    const pushbtn = wrap.getAllByTestId('pushbtn')[0];
+    const popbtn = wrap.getAllByTestId('popbtn')[0];
+    const shiftbtn = wrap.getAllByTestId('shiftbtn')[0];
+    const unshiftbtn = wrap.getAllByTestId('unshiftbtn')[0];
+    act(() => {
+      fireEvent.click(pushbtn);
+    });
+    expect(JSON.parse(testArray.textContent as any).length).toBe(2);
+    act(() => {
+      fireEvent.click(popbtn);
+    });
+    expect(JSON.parse(testArray.textContent as any).length).toBe(1);
+    act(() => {
+      fireEvent.click(unshiftbtn);
+    });
+    expect(JSON.parse(testArray.textContent as any).length).toBe(2);
+    act(() => {
+      fireEvent.click(shiftbtn);
+    });
+    expect(JSON.parse(testArray.textContent as any).length).toBe(1);
+  });
+
+  test('test special objects', () => {
+    const { result } = renderHook(() => {
+      // Almost all of the built-in objects are tested.
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+      return useReactive({
+        a: new Function('return 1;'),
+        b: new Boolean(true),
+        c: Symbol.for('a'),
+        d: new Error('a'),
+        e: new Number(1),
+        f: BigInt(1),
+        g: Math,
+        h: new Date(),
+        i: new String('a'),
+        j1: new RegExp(/a/),
+        j2: /a/,
+        k: new Array(1),
+        l: new Map(),
+        m: new Set(),
+        n: new ArrayBuffer(1),
+        o: new DataView(new ArrayBuffer(1)),
+        p: Atomics,
+        q: JSON,
+        r: new Promise((resolve) => resolve(1)),
+        s: Reflect,
+        t: new Proxy({}, {}),
+        u: Intl,
+        v: WebAssembly,
+      });
+    });
+
+    expect(() => result.current.a.name).not.toThrow();
+    expect(() => result.current.b.valueOf()).not.toThrow();
+    expect(() => result.current.c.valueOf()).not.toThrow();
+    expect(() => result.current.d.message).not.toThrow();
+    expect(() => result.current.e.valueOf()).not.toThrow();
+    expect(() => result.current.f.valueOf()).not.toThrow();
+    expect(() => result.current.g.PI).not.toThrow();
+    expect(() => result.current.h.getFullYear()).not.toThrow();
+    expect(() => result.current.i.valueOf()).not.toThrow();
+    expect(() => result.current.j1.test('a')).not.toThrow();
+    expect(() => result.current.j2.test('a')).not.toThrow();
+    expect(() => result.current.k.length).not.toThrow();
+    expect(() => result.current.l.size).not.toThrow();
+    expect(() => result.current.m.size).not.toThrow();
+    expect(() => result.current.n.byteLength).not.toThrow();
+    expect(() => result.current.o.byteLength).not.toThrow();
+    expect(() => result.current.p.isLockFree(1)).not.toThrow();
+    expect(() => result.current.q.stringify(1)).not.toThrow();
+    expect(() => result.current.r.then()).not.toThrow();
+    expect(() => result.current.s.ownKeys({})).not.toThrow();
+    expect(() => result.current.t.toString()).not.toThrow();
+    expect(() => result.current.u.DateTimeFormat()).not.toThrow();
+    expect(() => result.current.v.Module).not.toThrow();
+  });
+
+  test('test JSX element', () => {
+    const hook = renderHook(() => useReactive({ html: <div data-testid="id">foo</div> }));
+    const proxy = hook.result.current;
+    const wrap = render(proxy.html);
+    const html = wrap.getByTestId('id');
+
+    expect(html.textContent).toBe('foo');
+    act(() => {
+      proxy.html = <div data-testid="id">bar</div>;
+      wrap.rerender(proxy.html);
+    });
+    expect(html.textContent).toBe('bar');
+    hook.unmount();
+  });
+
+  test('test read-only and non-configurable data property', () => {
+    const obj = {} as { user: { name: string } };
+    Reflect.defineProperty(obj, 'user', {
+      value: { name: 'foo' },
+      writable: false,
+      configurable: false,
+    });
+
+    const hook = renderHook(() => useReactive(obj));
+    const proxy = hook.result.current;
+
+    expect(() => proxy.user.name).not.toThrow();
+    hook.unmount();
+  });
+
+  test('test input1', () => {
+    const wrap = render(<Demo />);
+
+    const input = wrap.getAllByTestId('input1')[0];
+    const inputVal = wrap.getAllByTestId('inputVal1')[0];
+    act(() => {
+      fireEvent.change(input, { target: { value: 'a' } });
+    });
+    expect(inputVal.textContent).toBe('a');
+
+    act(() => {
+      fireEvent.change(input, { target: { value: 'bbb' } });
+    });
+    expect(inputVal.textContent).toBe('bbb');
+  });
+
+  test('delete object property', () => {
+    const wrap = render(<Demo />);
+
+    const deleteProperty = wrap.getAllByTestId('deleteProperty')[0];
+    const deletePropertyBtn = wrap.getAllByTestId('deletePropertyBtn')[0];
+    expect(deleteProperty.textContent).toBe('foo');
+
+    act(() => {
+      fireEvent.click(deletePropertyBtn);
+    });
+    expect(deleteProperty.textContent).toBe('');
+  });
+
+  test('access from self to prototype chain', () => {
+    const parent: Record<string, string> = {
+      name: 'parent',
+      get value() {
+        return this.name;
+      },
+    };
+
+    const child: Record<string, string> = {
+      name: 'child',
+    };
+
+    const { result } = renderHook(() => useReactive(parent));
+    const proxy = result.current;
+
+    Object.setPrototypeOf(child, proxy);
+
+    expect(child.value).toBe('child');
+    expect(proxy.value).toBe('parent');
+    expect(parent.value).toBe('parent');
+
+    act(() => {
+      void delete child.name;
+    });
+    expect(child.value).toBe('parent');
+    expect(proxy.value).toBe('parent');
+    expect(parent.value).toBe('parent');
+
+    act(() => {
+      void delete proxy.name;
+    });
+    expect(child.value).toBeUndefined();
+    expect(proxy.value).toBeUndefined();
+    expect(parent.value).toBeUndefined();
+  });
+});
