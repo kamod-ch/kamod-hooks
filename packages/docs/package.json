@@ -1,0 +1,17 @@
+{
+  "name": "@kamod-hooks/docs",
+  "private": true,
+  "type": "module",
+  "description": "PreactPress documentation site for @kamod-hooks/core",
+  "scripts": {
+    "dev": "preactpress dev",
+    "build": "preactpress build",
+    "preview": "preactpress preview"
+  },
+  "devDependencies": {
+    "@kamod-hooks/core": "workspace:*",
+    "preact": "^10.26.0",
+    "preactpress": "file:../../../preactpress",
+    "typescript": "^5.9.2"
+  }
+}

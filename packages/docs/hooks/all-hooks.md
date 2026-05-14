@@ -1,44 +1,9 @@
-# kamod-hooks
+---
+title: All hooks and utilities
+description: Complete alphabetical list of exports from @kamod-hooks/core with short descriptions.
+---
 
-Preact hooks library ported from [ahooks](https://github.com/alibaba/hooks), structured similarly to [kamod-ui](../kamod-ui): pnpm workspace, `packages/core`, `tsup`, Vitest.
-
-## Highlights
-
-- **Peer dependency:** `preact` (^10.26.0) only — **no runtime npm `dependencies`** in `@kamod-hooks/core`.
-- **ESM + TypeScript** build (`pnpm -r build`).
-- **Browser APIs:** native `ResizeObserver`, `IntersectionObserver`, Fullscreen API, `URLSearchParams` / `history` for URL state (no `react-router`).
-
-## Usage
-
-```bash
-pnpm add @kamod-hooks/core preact
-```
-
-```ts
-import { useToggle, useUrlState } from "@kamod-hooks/core";
-```
-
-`useUrlState` syncs query string with `history.pushState` / `replaceState` and listens for `popstate`. It is not API-identical to `@ahooks.js/use-url-state` (no `react-router` / `query-string`).
-
-## Documentation site
-
-The **PreactPress** site in `packages/docs` is the consumer-facing guide (Markdown + code examples).
-
-```bash
-pnpm install
-pnpm --filter @kamod-hooks/docs dev
-```
-
-Production build:
-
-```bash
-pnpm --filter @kamod-hooks/docs build
-pnpm --filter @kamod-hooks/docs preview
-```
-
-The site links to the local `preactpress` package via `file:../../../preactpress` (same checkout as this repo’s parent `kamod` folder). For **GitHub Pages** or any host that serves the app under a subpath, set `site.base` in `packages/docs/.preactpress/config.ts` (see the **Deploying this documentation site** section in the `getting-started` page source under `packages/docs`).
-
-## Hooks and utilities
+This page lists every public export from `@kamod-hooks/core`. For longer examples, see the topic pages in the sidebar.
 
 | Export | Description |
 | --- | --- |
@@ -123,17 +88,3 @@ The site links to the local `preactpress` package via `file:../../../preactpress
 | `clearCache` | Clears cached results used by `useRequest`. |
 | `configResponsive` | Registers breakpoint names and widths for `useResponsive`. |
 | `createUpdateEffect` | Builds an effect hook that runs only on updates, not on mount. |
-
-## Scripts
-
-| Command        | Description                |
-|----------------|----------------------------|
-| `pnpm build`   | Build all packages         |
-| `pnpm test`    | Run `@kamod-hooks/core` tests |
-| `pnpm typecheck` | Typecheck workspace     |
-| `pnpm --filter @kamod-hooks/docs dev` | Run PreactPress docs locally |
-| `pnpm --filter @kamod-hooks/docs build` | Static build of docs to `packages/docs/dist` |
-
-## License
-
-MIT — see [LICENSE](LICENSE) and [NOTICE](NOTICE).
