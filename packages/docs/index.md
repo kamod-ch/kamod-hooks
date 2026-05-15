@@ -13,6 +13,6 @@ description: Preact hooks ported from ahooks — zero runtime npm dependencies.
 
 ## Documentation
 
-This site is built with **PreactPress** (Vite + Preact, Markdown pages). Pages are **guides and copy-paste examples**, not live playgrounds. For behavior guarantees, rely on the library tests and TypeScript types.
+This site is built with **PreactPress** (Vite + Preact, Markdown pages): built-in **search**, page **outline**, and **light/dark** theme switching from the default layout. Pages are **guides and copy-paste examples**, not live playgrounds. For behavior guarantees, rely on the library tests and TypeScript types.
 
 Next: [Getting started](/getting-started). The full export list is on [All hooks (reference)](/hooks/all-hooks).

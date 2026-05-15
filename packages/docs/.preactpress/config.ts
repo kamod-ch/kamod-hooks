@@ -3,9 +3,20 @@ export default {
     title: 'Kamod Hooks',
     description: 'Preact hooks — zero runtime npm dependencies (peer: preact only).',
     // Use a subpath when hosting on GitHub Pages (e.g. '/kamod-hooks/'). Root deploys: '/'
-    base: '/'
+    base: '/',
+    // Set `url` to a canonical origin (e.g. 'https://example.com') so PreactPress can emit sitemap.xml and robots.txt.
+    // url: 'https://example.com'
+  },
+  markdown: {
+    html: false,
+    linkify: true,
+    typographer: true
   },
   themeConfig: {
+    outline: true,
+    search: true,
+    lastUpdated: true,
+    footer: 'Kamod Hooks — MIT',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Getting started', link: '/getting-started' },

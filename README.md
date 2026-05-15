@@ -22,11 +22,17 @@ import { useToggle, useUrlState } from "@kamod-hooks/core";
 
 ## Documentation site
 
-The **PreactPress** site in `packages/docs` is the consumer-facing guide (Markdown + code examples).
+The **PreactPress** site in `packages/docs` is the consumer-facing guide (Markdown + code examples). The default PreactPress theme provides **search**, an on-page **outline**, **light/dark** switching, and optional `lastUpdated` — configured in `packages/docs/.preactpress/config.ts`. You can use a plain default export (as in this repo) or `defineConfig` from `preactpress/config` if you prefer typed config; see the [PreactPress README](../preactpress/README.md) in this monorepo.
 
 ```bash
 pnpm install
 pnpm --filter @kamod-hooks/docs dev
+```
+
+Validate config, routes, and internal links before deploy or in CI:
+
+```bash
+pnpm docs:check
 ```
 
 Production build:
@@ -132,6 +138,7 @@ The site links to the local `preactpress` package via `file:../../../preactpress
 | `pnpm test`    | Run `@kamod-hooks/core` tests |
 | `pnpm typecheck` | Typecheck workspace     |
 | `pnpm --filter @kamod-hooks/docs dev` | Run PreactPress docs locally |
+| `pnpm docs:check` | Run `preactpress check` on the docs site |
 | `pnpm --filter @kamod-hooks/docs build` | Static build of docs to `packages/docs/dist` |
 
 ## License

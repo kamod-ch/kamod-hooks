@@ -41,6 +41,10 @@ Browse the **Hooks** section in the sidebar for topic guides and code samples. E
 
 From `packages/docs`, `pnpm build` writes static files to `dist/`. Point any static host (GitHub Pages, Netlify, etc.) at that folder after CI runs the build.
 
+Run **`preactpress check`** (or from the repo root `pnpm docs:check`) to validate the config, routes, nav/sidebar links, and local Markdown links before you deploy.
+
+To emit **`sitemap.xml`** and **`robots.txt`**, set **`site.url`** in `.preactpress/config.ts` to the site’s canonical origin (for example `https://user.github.io/repo-name` or `https://docs.example.com`). Without `site.url`, pages still build; those files are only written when the URL is set.
+
 If the site is served under a **subpath** (for example GitHub Pages at `https://user.github.io/repo-name/`), set `site.base` in `.preactpress/config.ts`:
 
 ```ts
@@ -51,4 +55,4 @@ site: {
 
 For a root URL, keep `base: '/'`. PreactPress forwards this to Vite so assets and client routing match the host path.
 
-This package depends on `preactpress` via `file:../../../preactpress`, which assumes this repo layout (`kamod/kamod-hooks/packages/docs` next to `kamod/preactpress`). For a standalone hooks-only checkout, point `preactpress` at a published version instead.
+This package depends on `preactpress` via `file:../../../preactpress`, which assumes this repo layout (`kamod/kamod-hooks/packages/docs` next to `kamod/preactpress`). For a standalone hooks-only checkout, point `preactpress` at a published version instead. For CLI and configuration details, see the PreactPress README in the `preactpress` directory at the same level as `kamod-hooks` in this monorepo.

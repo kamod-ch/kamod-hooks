@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "preactpress dev",
     "build": "preactpress build",
-    "preview": "preactpress preview"
+    "preview": "preactpress preview",
+    "check": "preactpress check"
   },
   "devDependencies": {
     "@kamod-hooks/core": "workspace:*",
-    "preact": "^10.26.0",
+    "preact": "^10.28.2",
     "preactpress": "file:../../../preactpress",
     "typescript": "^5.9.2"
   }
