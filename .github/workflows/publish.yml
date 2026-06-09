@@ -34,6 +34,12 @@ jobs:
           cache: pnpm
           registry-url: "https://registry.npmjs.org"
 
+      - name: Build preactpress
+        run: |
+          cd "$(dirname "${GITHUB_WORKSPACE}")/preactpress"
+          pnpm install --frozen-lockfile
+          pnpm build
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
