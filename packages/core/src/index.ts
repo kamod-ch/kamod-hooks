@@ -78,6 +78,12 @@ import useMutationObserver from './useMutationObserver';
 import useTheme from './useTheme';
 import useUrlState from './useUrlState';
 
+export type { Options as UseDragOptions } from './useDrag';
+export type { Options as UseDropOptions } from './useDrop';
+export type { Options as UseWebSocketOptions, Result as UseWebSocketResult } from './useWebSocket';
+export { ReadyState as WebSocketReadyState } from './useWebSocket';
+export type { UrlStateOptions as UseUrlStateOptions } from './useUrlState';
+
 export {
   useRequest,
   useControllableValue,

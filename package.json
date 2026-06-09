@@ -5,11 +5,20 @@
   "private": true,
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamod-ch/kamod-hooks.git"
+  },
   "scripts": {
     "build": "pnpm -r build",
     "test": "pnpm --filter @kamod-hooks/core test",
+    "test:ci": "pnpm test",
     "typecheck": "pnpm -r typecheck",
-    "docs:check": "pnpm --filter @kamod-hooks/docs check"
+    "demo": "pnpm --filter @kamod-hooks/docs dev",
+    "docs:check": "pnpm --filter @kamod-hooks/docs check",
+    "qa:publint": "pnpm --filter @kamod-hooks/core publint",
+    "qa:attw": "pnpm --filter @kamod-hooks/core attw",
+    "qa:package": "pnpm --filter @kamod-hooks/core build && pnpm qa:publint && pnpm qa:attw"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",

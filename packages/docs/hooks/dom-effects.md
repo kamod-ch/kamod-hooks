@@ -59,4 +59,38 @@ function Measured() {
 }
 ```
 
+## useDrag / useDrop
+
+Native HTML5 drag and drop: `useDrag` marks an element as draggable and writes JSON payload into `dataTransfer`; `useDrop` listens on a target and parses files, URIs, text, or that custom payload.
+
+```tsx
+import { useRef, useState } from 'preact/hooks'
+import { useDrag, useDrop } from '@kamod-hooks/core'
+
+function DragDropDemo() {
+  const dragRef = useRef<HTMLDivElement>(null)
+  const dropRef = useRef<HTMLDivElement>(null)
+  const [dropped, setDropped] = useState<string | null>(null)
+
+  useDrag({ id: 1, label: 'Drag me' }, dragRef, {
+    onDragStart: () => setDropped(null),
+  })
+
+  useDrop(dropRef, {
+    onDom: (data) => setDropped(JSON.stringify(data)),
+  })
+
+  return (
+    <>
+      <div ref={dragRef} style={{ padding: 12, border: '1px dashed #888' }}>
+        Drag source
+      </div>
+      <div ref={dropRef} style={{ marginTop: 12, padding: 24, border: '1px solid #ccc' }}>
+        Drop zone {dropped ? `→ ${dropped}` : ''}
+      </div>
+    </>
+  )
+}
+```
+
 See also: `useScroll`, `useHover`, `useFocusWithin`, `useMutationObserver`, `useKeyPress`, `useDocumentVisibility`, `useDebounceEffect`, `useThrottleEffect`, `useDeepCompareEffect`, and layout-effect variants where exported.

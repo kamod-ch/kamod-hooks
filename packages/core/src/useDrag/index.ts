@@ -21,9 +21,8 @@ const useDrag = <T>(data: T, target: BasicTarget, options: Options = {}) => {
   const dataRef = useLatest(data);
   const imageElementRef = useRef<Element | undefined>(undefined);
 
-  const { dragImage } = optionsRef.current;
-
   useMount(() => {
+    const { dragImage } = optionsRef.current;
     if (dragImage?.image) {
       const { image } = dragImage;
 
@@ -49,6 +48,7 @@ const useDrag = <T>(data: T, target: BasicTarget, options: Options = {}) => {
         optionsRef.current.onDragStart?.(event);
         event.dataTransfer!.setData('custom', JSON.stringify(dataRef.current));
 
+        const { dragImage } = optionsRef.current;
         if (dragImage?.image && imageElementRef.current) {
           const { offsetX = 0, offsetY = 0 } = dragImage;
 
@@ -70,6 +70,9 @@ const useDrag = <T>(data: T, target: BasicTarget, options: Options = {}) => {
       return () => {
         targetElement.removeEventListener('dragstart', onDragStart as any);
         targetElement.removeEventListener('dragend', onDragEnd as any);
+        if ('removeAttribute' in targetElement) {
+          (targetElement as Element).removeAttribute('draggable');
+        }
       };
     },
     [],

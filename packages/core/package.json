@@ -4,6 +4,14 @@
   "type": "module",
   "description": "Preact hooks — zero runtime npm dependencies (peer: preact only).",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamod-ch/kamod-hooks.git",
+    "directory": "packages/core"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -19,20 +27,24 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "publint": "publint",
+    "attw": "attw --pack . --profile esm-only"
   },
   "peerDependencies": {
-    "preact": "^10.26.0"
+    "preact": "^10.29.2"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "@testing-library/jest-dom": "^6.8.0",
+    "@arethetypeswrong/cli": "^0.18.3",
+    "@types/node": "^25.9.2",
+    "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/preact": "^3.2.4",
-    "jsdom": "^26.1.0",
-    "preact": "^10.26.0",
-    "preact-render-to-string": "^6.6.3",
-    "tsup": "^8.5.0",
-    "vitest": "^4.1.2"
+    "jsdom": "^29.1.1",
+    "preact": "^10.29.2",
+    "preact-render-to-string": "^6.7.0",
+    "publint": "^0.3.21",
+    "tsup": "^8.5.1",
+    "vitest": "^4.1.8"
   }
 }

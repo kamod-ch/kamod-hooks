@@ -63,8 +63,8 @@ The site links to the local `preactpress` package via `file:../../../preactpress
 | `useDeepCompareEffect` | `useEffect` with deep-equality dependency comparison. |
 | `useDeepCompareLayoutEffect` | `useLayoutEffect` variant with deep-equality deps. |
 | `useDocumentVisibility` | Subscribes to `document.visibilityState` (tab visible / hidden). |
-| `useDrag` | Drag gesture on a DOM element (position / movement). |
-| `useDrop` | Drop target that accepts dragged files or data. |
+| `useDrag` | HTML5 drag source: sets `draggable`, serializes payload into `dataTransfer` (pairs with `useDrop`). |
+| `useDrop` | HTML5 drop target: accepts custom DOM data, files, URIs, text, and paste events. |
 | `useDynamicList` | List state with add, remove, replace, reorder, and bulk updates. |
 | `useEventEmitter` | Simple pub/sub event bus shared across components. |
 | `useEventListener` | Attaches a DOM event listener with sensible defaults and cleanup. |

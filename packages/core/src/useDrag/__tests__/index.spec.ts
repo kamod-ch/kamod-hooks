@@ -16,6 +16,7 @@ const mockTarget = {
     Reflect.deleteProperty(events, event);
   }),
   setAttribute: vi.fn(),
+  removeAttribute: vi.fn(),
 };
 
 describe('useDrag', () => {
@@ -30,6 +31,7 @@ describe('useDrag', () => {
     expect(mockTarget.setAttribute).toHaveBeenCalledWith('draggable', 'true');
     unmount();
     expect(mockTarget.removeEventListener).toHaveBeenCalled();
+    expect(mockTarget.removeAttribute).toHaveBeenCalledWith('draggable');
   });
 
   test('should trigger drag callback', () => {
@@ -60,12 +62,34 @@ describe('useDrag', () => {
   });
 
   test(`should not work when target don't support addEventListener method`, () => {
-    Object.defineProperty(mockTarget, 'addEventListener', {
+    const brokenTarget = {
+      setAttribute: vi.fn(),
+      removeAttribute: vi.fn(),
+    };
+    Object.defineProperty(brokenTarget, 'addEventListener', {
       get() {
         return false;
       },
     });
-    setup(1, mockTarget as any);
-    expect(mockTarget.setAttribute).not.toHaveBeenCalled();
+    setup(1, brokenTarget as any);
+    expect(brokenTarget.setAttribute).not.toHaveBeenCalled();
+  });
+
+  test('should set custom drag image on dragstart', () => {
+    const imageElement = document.createElement('img');
+    const setDragImage = vi.fn();
+    const mockEvent = {
+      dataTransfer: {
+        setData: vi.fn(),
+        setDragImage,
+      },
+    };
+
+    setup(1, mockTarget as any, {
+      dragImage: { image: imageElement, offsetX: 4, offsetY: 8 },
+    });
+
+    events.dragstart(mockEvent);
+    expect(setDragImage).toHaveBeenCalledWith(imageElement, 4, 8);
   });
 });
