@@ -18,6 +18,15 @@ pnpm add @kamod-hooks/core preact
 import { useToggle, useUrlState } from "@kamod-hooks/core";
 ```
 
+Per-hook subpath imports are also supported for more granular development and bundle analysis:
+
+```ts
+import useToggle from "@kamod-hooks/core/useToggle";
+import useUrlState from "@kamod-hooks/core/useUrlState";
+```
+
+Each `@kamod-hooks/core/<hookName>` subpath maps to the matching camelCase source folder. The root barrel remains available and is tree-shakeable in modern bundlers.
+
 `useUrlState` syncs query string with `history.pushState` / `replaceState` and listens for `popstate`. It is not API-identical to `@ahooks.js/use-url-state` (no `react-router` / `query-string`).
 
 ## Documentation site

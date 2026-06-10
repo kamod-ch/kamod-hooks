@@ -70,6 +70,7 @@ Please ensure `pnpm typecheck`, `pnpm test`, and `pnpm build` pass before openin
 ## Hooks and documentation
 
 - **Library code** belongs in `packages/core`. Match existing patterns for target refs, `useLatest`, and cleanup in effects.
+- **Package exports** are generated during the core build from public `src/use*` folders plus `src/createUpdateEffect`. Add a hook folder with an `index.ts` or `index.tsx`; `scripts/sync-package-exports.mjs` keeps `package.json` subpath exports in sync.
 - **Docs** live in `packages/docs`. When you add or change a hook’s public API or behavior, update the relevant topic page and the table in `hooks/all-hooks.md` (and the root `README.md`).
 
 ## Commit convention
@@ -89,3 +90,5 @@ Vitest runs in `packages/core` (`pnpm test` from root). New behavior should incl
 ## Releases
 
 Publishing is tag-driven: push a tag matching `v*` (for example `v0.1.1`) to trigger the GitHub Actions publish workflow for `@kamod-hooks/core` on npm. Configure the `NPM_TOKEN` repository secret with publish access to the `@kamod-hooks` scope.
+
+Granular per-hook subpath exports are backward compatible with the root barrel API and should ship as the next minor release on the current major line, for example `v1.1.0` after `v1.0.x`.

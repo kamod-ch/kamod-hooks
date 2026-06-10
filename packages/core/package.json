@@ -1,6 +1,6 @@
 {
   "name": "@kamod-hooks/core",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "description": "Preact hooks — zero runtime npm dependencies (peer: preact only).",
   "license": "MIT",
@@ -18,12 +18,330 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./createUpdateEffect": {
+      "types": "./dist/createUpdateEffect/index.d.ts",
+      "import": "./dist/createUpdateEffect/index.js"
+    },
+    "./useAntdTable": {
+      "types": "./dist/useAntdTable/index.d.ts",
+      "import": "./dist/useAntdTable/index.js"
+    },
+    "./useAsyncEffect": {
+      "types": "./dist/useAsyncEffect/index.d.ts",
+      "import": "./dist/useAsyncEffect/index.js"
+    },
+    "./useBoolean": {
+      "types": "./dist/useBoolean/index.d.ts",
+      "import": "./dist/useBoolean/index.js"
+    },
+    "./useClickAway": {
+      "types": "./dist/useClickAway/index.d.ts",
+      "import": "./dist/useClickAway/index.js"
+    },
+    "./useControllableValue": {
+      "types": "./dist/useControllableValue/index.d.ts",
+      "import": "./dist/useControllableValue/index.js"
+    },
+    "./useCookieState": {
+      "types": "./dist/useCookieState/index.d.ts",
+      "import": "./dist/useCookieState/index.js"
+    },
+    "./useCountDown": {
+      "types": "./dist/useCountDown/index.d.ts",
+      "import": "./dist/useCountDown/index.js"
+    },
+    "./useCounter": {
+      "types": "./dist/useCounter/index.d.ts",
+      "import": "./dist/useCounter/index.js"
+    },
+    "./useCreation": {
+      "types": "./dist/useCreation/index.d.ts",
+      "import": "./dist/useCreation/index.js"
+    },
+    "./useDebounce": {
+      "types": "./dist/useDebounce/index.d.ts",
+      "import": "./dist/useDebounce/index.js"
+    },
+    "./useDebounceEffect": {
+      "types": "./dist/useDebounceEffect/index.d.ts",
+      "import": "./dist/useDebounceEffect/index.js"
+    },
+    "./useDebounceFn": {
+      "types": "./dist/useDebounceFn/index.d.ts",
+      "import": "./dist/useDebounceFn/index.js"
+    },
+    "./useDeepCompareEffect": {
+      "types": "./dist/useDeepCompareEffect/index.d.ts",
+      "import": "./dist/useDeepCompareEffect/index.js"
+    },
+    "./useDeepCompareLayoutEffect": {
+      "types": "./dist/useDeepCompareLayoutEffect/index.d.ts",
+      "import": "./dist/useDeepCompareLayoutEffect/index.js"
+    },
+    "./useDocumentVisibility": {
+      "types": "./dist/useDocumentVisibility/index.d.ts",
+      "import": "./dist/useDocumentVisibility/index.js"
+    },
+    "./useDrag": {
+      "types": "./dist/useDrag/index.d.ts",
+      "import": "./dist/useDrag/index.js"
+    },
+    "./useDrop": {
+      "types": "./dist/useDrop/index.d.ts",
+      "import": "./dist/useDrop/index.js"
+    },
+    "./useDynamicList": {
+      "types": "./dist/useDynamicList/index.d.ts",
+      "import": "./dist/useDynamicList/index.js"
+    },
+    "./useEventEmitter": {
+      "types": "./dist/useEventEmitter/index.d.ts",
+      "import": "./dist/useEventEmitter/index.js"
+    },
+    "./useEventListener": {
+      "types": "./dist/useEventListener/index.d.ts",
+      "import": "./dist/useEventListener/index.js"
+    },
+    "./useEventTarget": {
+      "types": "./dist/useEventTarget/index.d.ts",
+      "import": "./dist/useEventTarget/index.js"
+    },
+    "./useExternal": {
+      "types": "./dist/useExternal/index.d.ts",
+      "import": "./dist/useExternal/index.js"
+    },
+    "./useFavicon": {
+      "types": "./dist/useFavicon/index.d.ts",
+      "import": "./dist/useFavicon/index.js"
+    },
+    "./useFocusWithin": {
+      "types": "./dist/useFocusWithin/index.d.ts",
+      "import": "./dist/useFocusWithin/index.js"
+    },
+    "./useFullscreen": {
+      "types": "./dist/useFullscreen/index.d.ts",
+      "import": "./dist/useFullscreen/index.js"
+    },
+    "./useFusionTable": {
+      "types": "./dist/useFusionTable/index.d.ts",
+      "import": "./dist/useFusionTable/index.js"
+    },
+    "./useGetState": {
+      "types": "./dist/useGetState/index.d.ts",
+      "import": "./dist/useGetState/index.js"
+    },
+    "./useHistoryTravel": {
+      "types": "./dist/useHistoryTravel/index.d.ts",
+      "import": "./dist/useHistoryTravel/index.js"
+    },
+    "./useHover": {
+      "types": "./dist/useHover/index.d.ts",
+      "import": "./dist/useHover/index.js"
+    },
+    "./useInViewport": {
+      "types": "./dist/useInViewport/index.d.ts",
+      "import": "./dist/useInViewport/index.js"
+    },
+    "./useInfiniteScroll": {
+      "types": "./dist/useInfiniteScroll/index.d.ts",
+      "import": "./dist/useInfiniteScroll/index.js"
+    },
+    "./useInterval": {
+      "types": "./dist/useInterval/index.d.ts",
+      "import": "./dist/useInterval/index.js"
+    },
+    "./useIsomorphicLayoutEffect": {
+      "types": "./dist/useIsomorphicLayoutEffect/index.d.ts",
+      "import": "./dist/useIsomorphicLayoutEffect/index.js"
+    },
+    "./useKeyPress": {
+      "types": "./dist/useKeyPress/index.d.ts",
+      "import": "./dist/useKeyPress/index.js"
+    },
+    "./useLatest": {
+      "types": "./dist/useLatest/index.d.ts",
+      "import": "./dist/useLatest/index.js"
+    },
+    "./useLocalStorageState": {
+      "types": "./dist/useLocalStorageState/index.d.ts",
+      "import": "./dist/useLocalStorageState/index.js"
+    },
+    "./useLockFn": {
+      "types": "./dist/useLockFn/index.d.ts",
+      "import": "./dist/useLockFn/index.js"
+    },
+    "./useLongPress": {
+      "types": "./dist/useLongPress/index.d.ts",
+      "import": "./dist/useLongPress/index.js"
+    },
+    "./useMap": {
+      "types": "./dist/useMap/index.d.ts",
+      "import": "./dist/useMap/index.js"
+    },
+    "./useMemoizedFn": {
+      "types": "./dist/useMemoizedFn/index.d.ts",
+      "import": "./dist/useMemoizedFn/index.js"
+    },
+    "./useMount": {
+      "types": "./dist/useMount/index.d.ts",
+      "import": "./dist/useMount/index.js"
+    },
+    "./useMouse": {
+      "types": "./dist/useMouse/index.d.ts",
+      "import": "./dist/useMouse/index.js"
+    },
+    "./useMutationObserver": {
+      "types": "./dist/useMutationObserver/index.d.ts",
+      "import": "./dist/useMutationObserver/index.js"
+    },
+    "./useNetwork": {
+      "types": "./dist/useNetwork/index.d.ts",
+      "import": "./dist/useNetwork/index.js"
+    },
+    "./usePagination": {
+      "types": "./dist/usePagination/index.d.ts",
+      "import": "./dist/usePagination/index.js"
+    },
+    "./usePrevious": {
+      "types": "./dist/usePrevious/index.d.ts",
+      "import": "./dist/usePrevious/index.js"
+    },
+    "./useRafInterval": {
+      "types": "./dist/useRafInterval/index.d.ts",
+      "import": "./dist/useRafInterval/index.js"
+    },
+    "./useRafState": {
+      "types": "./dist/useRafState/index.d.ts",
+      "import": "./dist/useRafState/index.js"
+    },
+    "./useRafTimeout": {
+      "types": "./dist/useRafTimeout/index.d.ts",
+      "import": "./dist/useRafTimeout/index.js"
+    },
+    "./useReactive": {
+      "types": "./dist/useReactive/index.d.ts",
+      "import": "./dist/useReactive/index.js"
+    },
+    "./useRequest": {
+      "types": "./dist/useRequest/index.d.ts",
+      "import": "./dist/useRequest/index.js"
+    },
+    "./useResetState": {
+      "types": "./dist/useResetState/index.d.ts",
+      "import": "./dist/useResetState/index.js"
+    },
+    "./useResponsive": {
+      "types": "./dist/useResponsive/index.d.ts",
+      "import": "./dist/useResponsive/index.js"
+    },
+    "./useSafeState": {
+      "types": "./dist/useSafeState/index.d.ts",
+      "import": "./dist/useSafeState/index.js"
+    },
+    "./useScroll": {
+      "types": "./dist/useScroll/index.d.ts",
+      "import": "./dist/useScroll/index.js"
+    },
+    "./useSelections": {
+      "types": "./dist/useSelections/index.d.ts",
+      "import": "./dist/useSelections/index.js"
+    },
+    "./useSessionStorageState": {
+      "types": "./dist/useSessionStorageState/index.d.ts",
+      "import": "./dist/useSessionStorageState/index.js"
+    },
+    "./useSet": {
+      "types": "./dist/useSet/index.d.ts",
+      "import": "./dist/useSet/index.js"
+    },
+    "./useSetState": {
+      "types": "./dist/useSetState/index.d.ts",
+      "import": "./dist/useSetState/index.js"
+    },
+    "./useSize": {
+      "types": "./dist/useSize/index.d.ts",
+      "import": "./dist/useSize/index.js"
+    },
+    "./useTextSelection": {
+      "types": "./dist/useTextSelection/index.d.ts",
+      "import": "./dist/useTextSelection/index.js"
+    },
+    "./useTheme": {
+      "types": "./dist/useTheme/index.d.ts",
+      "import": "./dist/useTheme/index.js"
+    },
+    "./useThrottle": {
+      "types": "./dist/useThrottle/index.d.ts",
+      "import": "./dist/useThrottle/index.js"
+    },
+    "./useThrottleEffect": {
+      "types": "./dist/useThrottleEffect/index.d.ts",
+      "import": "./dist/useThrottleEffect/index.js"
+    },
+    "./useThrottleFn": {
+      "types": "./dist/useThrottleFn/index.d.ts",
+      "import": "./dist/useThrottleFn/index.js"
+    },
+    "./useTimeout": {
+      "types": "./dist/useTimeout/index.d.ts",
+      "import": "./dist/useTimeout/index.js"
+    },
+    "./useTitle": {
+      "types": "./dist/useTitle/index.d.ts",
+      "import": "./dist/useTitle/index.js"
+    },
+    "./useToggle": {
+      "types": "./dist/useToggle/index.d.ts",
+      "import": "./dist/useToggle/index.js"
+    },
+    "./useTrackedEffect": {
+      "types": "./dist/useTrackedEffect/index.d.ts",
+      "import": "./dist/useTrackedEffect/index.js"
+    },
+    "./useUnmount": {
+      "types": "./dist/useUnmount/index.d.ts",
+      "import": "./dist/useUnmount/index.js"
+    },
+    "./useUnmountedRef": {
+      "types": "./dist/useUnmountedRef/index.d.ts",
+      "import": "./dist/useUnmountedRef/index.js"
+    },
+    "./useUpdate": {
+      "types": "./dist/useUpdate/index.d.ts",
+      "import": "./dist/useUpdate/index.js"
+    },
+    "./useUpdateEffect": {
+      "types": "./dist/useUpdateEffect/index.d.ts",
+      "import": "./dist/useUpdateEffect/index.js"
+    },
+    "./useUpdateLayoutEffect": {
+      "types": "./dist/useUpdateLayoutEffect/index.d.ts",
+      "import": "./dist/useUpdateLayoutEffect/index.js"
+    },
+    "./useUrlState": {
+      "types": "./dist/useUrlState/index.d.ts",
+      "import": "./dist/useUrlState/index.js"
+    },
+    "./useVirtualList": {
+      "types": "./dist/useVirtualList/index.d.ts",
+      "import": "./dist/useVirtualList/index.js"
+    },
+    "./useWebSocket": {
+      "types": "./dist/useWebSocket/index.d.ts",
+      "import": "./dist/useWebSocket/index.js"
+    },
+    "./useWhyDidYouUpdate": {
+      "types": "./dist/useWhyDidYouUpdate/index.d.ts",
+      "import": "./dist/useWhyDidYouUpdate/index.js"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsup",
+    "build": "node ../../scripts/sync-package-exports.mjs && tsup && tsc -p tsconfig.build.json && node ../../scripts/rewrite-declaration-imports.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",

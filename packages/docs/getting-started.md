@@ -29,6 +29,14 @@ function Demo() {
 render(<Demo />, document.getElementById('app')!)
 ```
 
+You can also import a hook from its dedicated subpath:
+
+```tsx
+import useToggle from '@kamod-hooks/core/useToggle'
+```
+
+Subpath names match the camelCase source folders, for example `@kamod-hooks/core/useUrlState` and `@kamod-hooks/core/useRequest`. Root imports remain supported when you prefer grouped named imports.
+
 ## TypeScript
 
 Types ship with the package (`exports` includes `types`). No extra `@types` package is required.
