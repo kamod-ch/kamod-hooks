@@ -11,18 +11,18 @@ Preact hooks library ported from [ahooks](https://github.com/alibaba/hooks), str
 ## Usage
 
 ```bash
-pnpm add @kamod-hooks/core preact
+pnpm add @kamod-ch/hooks preact
 ```
 
 ```ts
-import { useToggle, useUrlState } from "@kamod-hooks/core";
+import { useToggle, useUrlState } from "@kamod-ch/hooks";
 ```
 
 Per-hook subpath imports are also supported for more granular development and bundle analysis:
 
 ```ts
-import useToggle from "@kamod-hooks/core/useToggle";
-import useUrlState from "@kamod-hooks/core/useUrlState";
+import useToggle from "@kamod-ch/hooks/useToggle";
+import useUrlState from "@kamod-ch/hooks/useUrlState";
 ```
 
 Each `@kamod-hooks/core/<hookName>` subpath maps to the matching camelCase source folder. The root barrel remains available and is tree-shakeable in modern bundlers.
@@ -31,11 +31,13 @@ Each `@kamod-hooks/core/<hookName>` subpath maps to the matching camelCase sourc
 
 ## Documentation site
 
-The **PreactPress** site in `packages/docs` is the consumer-facing guide (Markdown + code examples). The default PreactPress theme provides **search**, an on-page **outline**, **light/dark** switching, and optional `lastUpdated` — configured in `packages/docs/.preactpress/config.ts`. You can use a plain default export (as in this repo) or `defineConfig` from `preactpress/config` if you prefer typed config; see the [PreactPress README](../preactpress/README.md) in this monorepo.
+The **PreactPress** site in `packages/docs` is the consumer-facing guide (Markdown + live Preact demos). It ships with **search**, an on-page **outline**, **light/dark** switching, and GitHub Pages-ready static output. Published URL:
+
+- https://kamod-ch.github.io/kamod-hooks/
 
 ```bash
 pnpm install
-pnpm --filter @kamod-hooks/docs dev
+pnpm docs:dev
 ```
 
 Validate config, routes, and internal links before deploy or in CI:
@@ -47,8 +49,8 @@ pnpm docs:check
 Production build:
 
 ```bash
-pnpm --filter @kamod-hooks/docs build
-pnpm --filter @kamod-hooks/docs preview
+pnpm docs:build
+pnpm docs:preview
 ```
 
 The site links to the local `preactpress` package via `file:../../../preactpress` (same checkout as this repo’s parent `kamod` folder). For **GitHub Pages** or any host that serves the app under a subpath, set `site.base` in `packages/docs/.preactpress/config.ts` (see the **Deploying this documentation site** section in the `getting-started` page source under `packages/docs`).
@@ -146,9 +148,10 @@ The site links to the local `preactpress` package via `file:../../../preactpress
 | `pnpm build`   | Build all packages         |
 | `pnpm test`    | Run `@kamod-hooks/core` tests |
 | `pnpm typecheck` | Typecheck workspace     |
-| `pnpm --filter @kamod-hooks/docs dev` | Run PreactPress docs locally |
-| `pnpm docs:check` | Run `preactpress check` on the docs site |
-| `pnpm --filter @kamod-hooks/docs build` | Static build of docs to `packages/docs/dist` |
+| `pnpm docs:dev` | Run PreactPress docs locally |
+| `pnpm docs:check` | Validate docs pages, demos, links, and routes |
+| `pnpm docs:build` | Build static docs to `packages/docs/dist` |
+| `pnpm docs:preview` | Preview the built docs locally |
 
 ## License
 

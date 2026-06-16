@@ -50,15 +50,15 @@ importers:
 
   packages/docs:
     devDependencies:
-      '@kamod-hooks/core':
+      '@kamod-ch/hooks':
         specifier: workspace:*
         version: link:../core
-      preact:
-        specifier: ^10.28.2
-        version: 10.29.1
-      preactpress:
+      '@kamod-ch/preactpress':
         specifier: file:../../../preactpress
         version: file:../preactpress(@babel/core@7.29.0)(@types/node@25.9.2)(esbuild@0.27.7)(rollup@4.60.3)
+      preact:
+        specifier: ^10.29.2
+        version: 10.29.2
       typescript:
         specifier: ^5.9.2
         version: 5.9.3
@@ -434,6 +434,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@kamod-ch/preactpress@file:../preactpress':
+    resolution: {directory: ../preactpress, type: directory}
+    engines: {node: '>=20'}
+    hasBin: true
 
   '@loaderkit/resolve@1.0.6':
     resolution: {integrity: sha512-G8FdIoF5CypfwmD9rl8BXod5HDn8JqB0CCNBXDTaRZ+yRYhARrrSToX1zg1zy9jX3zLqigsELwhT4gNtkdQAUg==}
@@ -1920,16 +1925,8 @@ packages:
     peerDependencies:
       preact: '>=10 || >= 11.0.0-0'
 
-  preact@10.29.1:
-    resolution: {integrity: sha512-gQCLc/vWroE8lIpleXtdJhTFDogTdZG9AjMUpVkDf2iTCNwYNWA+u16dL41TqUDJO4gm2IgrcMv3uTpjd4Pwmg==}
-
   preact@10.29.2:
     resolution: {integrity: sha512-7tNmwg/7mzzAoB/8kSg6Hl37JraAZw3Z3A0JSY7VXlZwo82Xn0G7wKbNNs2qoF4ZEEsQGTwDAroNdqKs1ofJxQ==}
-
-  preactpress@file:../preactpress:
-    resolution: {directory: ../preactpress, type: directory}
-    engines: {node: '>=20'}
-    hasBin: true
 
   pretty-format@27.5.1:
     resolution: {integrity: sha512-Qb1gy5OrP5+zDf2Bvnzdl3jsTf1qXVMazbvCoKhtKqVs4/YK4ozX4gKQJJVyNe+cajNPn0KoC0MC3FUmaHWEmQ==}
@@ -2795,6 +2792,44 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@kamod-ch/preactpress@file:../preactpress(@babel/core@7.29.0)(@types/node@25.9.2)(esbuild@0.27.7)(rollup@4.60.3)':
+    dependencies:
+      '@docsearch/css': 4.6.3
+      '@docsearch/js': 4.6.3
+      '@mdx-js/rollup': 3.1.1(rollup@4.60.3)
+      '@preact/preset-vite': 2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.60.3)(vite@8.0.16(@types/node@25.9.2)(esbuild@0.27.7))
+      '@shikijs/transformers': 4.2.0
+      gray-matter: 4.0.3
+      markdown-it: 14.2.0
+      markdown-it-emoji: 3.0.0
+      markdown-it-mathjax3: 5.2.0
+      minimist: 1.2.8
+      node-html-parser: 7.1.0
+      picocolors: 1.1.1
+      preact: 10.29.2
+      preact-render-to-string: 6.7.0(preact@10.29.2)
+      remark-frontmatter: 5.0.0
+      shiki: 4.2.0
+      sirv: 3.0.2
+      tinyglobby: 0.2.17
+      vite: 8.0.16(@types/node@25.9.2)(esbuild@0.27.7)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/node'
+      - '@vitejs/devtools'
+      - esbuild
+      - jiti
+      - less
+      - rollup
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
 
   '@loaderkit/resolve@1.0.6':
     dependencies:
@@ -4486,47 +4521,7 @@ snapshots:
     dependencies:
       preact: 10.29.2
 
-  preact@10.29.1: {}
-
   preact@10.29.2: {}
-
-  preactpress@file:../preactpress(@babel/core@7.29.0)(@types/node@25.9.2)(esbuild@0.27.7)(rollup@4.60.3):
-    dependencies:
-      '@docsearch/css': 4.6.3
-      '@docsearch/js': 4.6.3
-      '@mdx-js/rollup': 3.1.1(rollup@4.60.3)
-      '@preact/preset-vite': 2.10.5(@babel/core@7.29.0)(preact@10.29.2)(rollup@4.60.3)(vite@8.0.16(@types/node@25.9.2)(esbuild@0.27.7))
-      '@shikijs/transformers': 4.2.0
-      gray-matter: 4.0.3
-      markdown-it: 14.2.0
-      markdown-it-emoji: 3.0.0
-      markdown-it-mathjax3: 5.2.0
-      minimist: 1.2.8
-      node-html-parser: 7.1.0
-      picocolors: 1.1.1
-      preact: 10.29.2
-      preact-render-to-string: 6.7.0(preact@10.29.2)
-      remark-frontmatter: 5.0.0
-      shiki: 4.2.0
-      sirv: 3.0.2
-      tinyglobby: 0.2.17
-      vite: 8.0.16(@types/node@25.9.2)(esbuild@0.27.7)
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@types/node'
-      - '@vitejs/devtools'
-      - esbuild
-      - jiti
-      - less
-      - rollup
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - tsx
-      - yaml
 
   pretty-format@27.5.1:
     dependencies:

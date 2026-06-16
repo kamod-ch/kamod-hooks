@@ -1,11 +1,13 @@
-export default {
+import { defineConfig } from '@kamod-ch/preactpress/config'
+import { hookSidebar } from '../generated/sidebar'
+
+export default defineConfig({
+  theme: './theme/Layout.tsx',
   site: {
-    title: 'Kamod Hooks',
-    description: 'Preact hooks — zero runtime npm dependencies (peer: preact only).',
-    // Use a subpath when hosting on GitHub Pages (e.g. '/kamod-hooks/'). Root deploys: '/'
-    base: '/',
-    // Set `url` to a canonical origin (e.g. 'https://example.com') so PreactPress can emit sitemap.xml and robots.txt.
-    // url: 'https://example.com'
+    title: 'kamod-hooks',
+    description: 'Production-ready hooks for Preact.',
+    base: '/kamod-hooks/',
+    url: 'https://kamod-ch.github.io/kamod-hooks/'
   },
   markdown: {
     html: false,
@@ -16,30 +18,44 @@ export default {
     outline: true,
     search: true,
     lastUpdated: true,
-    footer: 'Kamod Hooks — MIT',
+    footer: 'kamod-hooks · MIT',
+    editLink: {
+      text: 'Edit this page',
+      pattern: 'https://github.com/kamod-ch/kamod-hooks/edit/main/packages/docs/:path'
+    },
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Getting started', link: '/getting-started' },
-      { text: 'All hooks', link: '/hooks/all-hooks' }
+      { text: 'Guide', link: '/guide/introduction' },
+      { text: 'Hooks', link: '/hooks' },
+      { text: 'GitHub', link: 'https://github.com/kamod-ch/kamod-hooks' }
     ],
     sidebar: [
       {
         text: 'Guide',
         items: [
-          { text: 'Introduction', link: '/' },
-          { text: 'Getting started', link: '/getting-started' }
+          { text: 'Introduction', link: '/guide/introduction' },
+          { text: 'Installation', link: '/guide/installation' },
+          { text: 'Getting started', link: '/guide/getting-started' },
+          { text: 'Usage', link: '/guide/usage' },
+          { text: 'TypeScript', link: '/guide/typescript' },
+          { text: 'SSR and browser APIs', link: '/guide/ssr' },
+          { text: 'Migration from ahooks', link: '/guide/migration-from-ahooks' }
         ]
       },
       {
         text: 'Hooks',
         items: [
-          { text: 'All hooks (reference)', link: '/hooks/all-hooks' },
-          { text: 'State & logic', link: '/hooks/state' },
-          { text: 'DOM & effects', link: '/hooks/dom-effects' },
-          { text: 'Async & data', link: '/hooks/async' },
-          { text: 'Storage & URL', link: '/hooks/storage-and-url' }
+          { text: 'All hooks', link: '/hooks' }
+        ]
+      },
+      ...hookSidebar,
+      {
+        text: 'Utilities',
+        items: [
+          { text: 'clearCache', link: '/utilities/clear-cache' },
+          { text: 'configResponsive', link: '/utilities/config-responsive' },
+          { text: 'createUpdateEffect', link: '/utilities/create-update-effect' }
         ]
       }
     ]
   }
-}
+})

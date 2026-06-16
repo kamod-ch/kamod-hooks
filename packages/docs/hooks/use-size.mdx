@@ -1,0 +1,23 @@
+---
+title: useSize
+description: Reads width and height from ResizeObserver.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-size/useSizeDemo'
+import source from '../demos/use-size/useSizeDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useSize"
+  description="Reads width and height from ResizeObserver."
+  importCode={`import { useSize } from '@kamod-ch/hooks'`}
+  signature={signatures.useSize}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

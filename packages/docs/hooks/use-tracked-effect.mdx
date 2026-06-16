@@ -1,0 +1,23 @@
+---
+title: useTrackedEffect
+description: Shows which dependency indexes changed between runs.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-tracked-effect/useTrackedEffectDemo'
+import source from '../demos/use-tracked-effect/useTrackedEffectDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useTrackedEffect"
+  description="Shows which dependency indexes changed between runs."
+  importCode={`import { useTrackedEffect } from '@kamod-ch/hooks'`}
+  signature={signatures.useTrackedEffect}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

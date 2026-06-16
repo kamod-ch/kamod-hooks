@@ -1,0 +1,23 @@
+---
+title: useEventEmitter
+description: Creates a small event bus shared through hook subscriptions.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-event-emitter/useEventEmitterDemo'
+import source from '../demos/use-event-emitter/useEventEmitterDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useEventEmitter"
+  description="Creates a small event bus shared through hook subscriptions."
+  importCode={`import { useEventEmitter } from '@kamod-ch/hooks'`}
+  signature={signatures.useEventEmitter}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: useLockFn
+description: Prevents overlapping async function executions.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-lock-fn/useLockFnDemo'
+import source from '../demos/use-lock-fn/useLockFnDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useLockFn"
+  description="Prevents overlapping async function executions."
+  importCode={`import { useLockFn } from '@kamod-ch/hooks'`}
+  signature={signatures.useLockFn}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

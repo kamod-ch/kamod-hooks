@@ -1,0 +1,23 @@
+---
+title: useKeyPress
+description: Runs a handler when matching keys are pressed.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-key-press/useKeyPressDemo'
+import source from '../demos/use-key-press/useKeyPressDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useKeyPress"
+  description="Runs a handler when matching keys are pressed."
+  importCode={`import { useKeyPress } from '@kamod-ch/hooks'`}
+  signature={signatures.useKeyPress}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

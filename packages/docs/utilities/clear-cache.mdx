@@ -1,0 +1,18 @@
+---
+title: clearCache
+description: Remove cached useRequest entries by key.
+---
+
+import { DemoContainer } from '../components/DemoContainer'
+import Demo from '../demos/utilities/ClearCacheDemo'
+import source from '../demos/utilities/ClearCacheDemo.tsx?raw'
+
+## Import
+
+```ts
+import { clearCache } from '@kamod-ch/hooks'
+```
+
+<DemoContainer title="Request cache" description="useRequest can store cached results under a key. clearCache removes that entry." source={source}>
+  <Demo />
+</DemoContainer>

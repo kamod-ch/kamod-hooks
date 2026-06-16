@@ -1,0 +1,23 @@
+---
+title: useRafInterval
+description: Interval scheduled through requestAnimationFrame.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-raf-interval/useRafIntervalDemo'
+import source from '../demos/use-raf-interval/useRafIntervalDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useRafInterval"
+  description="Interval scheduled through requestAnimationFrame."
+  importCode={`import { useRafInterval } from '@kamod-ch/hooks'`}
+  signature={signatures.useRafInterval}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

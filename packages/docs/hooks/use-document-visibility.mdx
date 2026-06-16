@@ -1,0 +1,23 @@
+---
+title: useDocumentVisibility
+description: Tracks document.visibilityState.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-document-visibility/useDocumentVisibilityDemo'
+import source from '../demos/use-document-visibility/useDocumentVisibilityDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useDocumentVisibility"
+  description="Tracks document.visibilityState."
+  importCode={`import { useDocumentVisibility } from '@kamod-ch/hooks'`}
+  signature={signatures.useDocumentVisibility}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

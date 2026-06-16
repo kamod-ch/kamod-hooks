@@ -1,0 +1,23 @@
+---
+title: useUrlState
+description: Synchronizes state with the URL query string via History API.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-url-state/useUrlStateDemo'
+import source from '../demos/use-url-state/useUrlStateDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useUrlState"
+  description="Synchronizes state with the URL query string via History API."
+  importCode={`import { useUrlState } from '@kamod-ch/hooks'`}
+  signature={signatures.useUrlState}
+  source={source}
+  browserOnly={true}
+  related={[{"name":"useLocalStorageState","href":"/hooks/use-local-storage-state"}]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

@@ -1,9 +1,9 @@
 import type { ComponentChildren, FunctionalComponent, JSX } from 'preact'
+import type { LayoutProps } from '@kamod-ch/preactpress/client'
 import { useEffect, useMemo, useState } from 'preact/hooks'
-import type { LayoutProps } from '../types.js'
 import Logo from './Logo.js'
 import ThemeToggle from './ThemeToggle.js'
-import './styles.css'
+import './style.css'
 
 function withBase(base: string, link: string): string {
   if (/^https?:\/\//.test(link)) return link

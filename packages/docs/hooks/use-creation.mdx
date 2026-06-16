@@ -1,0 +1,23 @@
+---
+title: useCreation
+description: Creates a memoized value with a stable instance until deps change.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-creation/useCreationDemo'
+import source from '../demos/use-creation/useCreationDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useCreation"
+  description="Creates a memoized value with a stable instance until deps change."
+  importCode={`import { useCreation } from '@kamod-ch/hooks'`}
+  signature={signatures.useCreation}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

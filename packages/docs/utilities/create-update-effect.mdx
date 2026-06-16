@@ -1,0 +1,18 @@
+---
+title: createUpdateEffect
+description: Build an effect hook that skips the initial mount.
+---
+
+import { DemoContainer } from '../components/DemoContainer'
+import Demo from '../demos/utilities/CreateUpdateEffectDemo'
+import source from '../demos/utilities/CreateUpdateEffectDemo.tsx?raw'
+
+## Import
+
+```ts
+import { createUpdateEffect } from '@kamod-ch/hooks'
+```
+
+<DemoContainer title="Custom update-only effect" description="Wrap useEffect to create a reusable effect hook that ignores the first render." source={source}>
+  <Demo />
+</DemoContainer>

@@ -1,0 +1,23 @@
+---
+title: usePagination
+description: Pagination state built on top of useRequest.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-pagination/usePaginationDemo'
+import source from '../demos/use-pagination/usePaginationDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="usePagination"
+  description="Pagination state built on top of useRequest."
+  importCode={`import { usePagination } from '@kamod-ch/hooks'`}
+  signature={signatures.usePagination}
+  source={source}
+  browserOnly={false}
+  related={[{"name":"useRequest","href":"/hooks/use-request"},{"name":"useAntdTable","href":"/hooks/use-antd-table"}]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: useExternal
+description: Loads external JS or CSS and reports the loading status.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-external/useExternalDemo'
+import source from '../demos/use-external/useExternalDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useExternal"
+  description="Loads external JS or CSS and reports the loading status."
+  importCode={`import { useExternal } from '@kamod-ch/hooks'`}
+  signature={signatures.useExternal}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

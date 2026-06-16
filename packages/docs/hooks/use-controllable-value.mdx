@@ -1,0 +1,23 @@
+---
+title: useControllableValue
+description: Unifies controlled and uncontrolled component state.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-controllable-value/useControllableValueDemo'
+import source from '../demos/use-controllable-value/useControllableValueDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useControllableValue"
+  description="Unifies controlled and uncontrolled component state."
+  importCode={`import { useControllableValue } from '@kamod-ch/hooks'`}
+  signature={signatures.useControllableValue}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

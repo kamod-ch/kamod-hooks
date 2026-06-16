@@ -1,0 +1,23 @@
+---
+title: useTitle
+description: Sets document.title and can restore the previous value.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-title/useTitleDemo'
+import source from '../demos/use-title/useTitleDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useTitle"
+  description="Sets document.title and can restore the previous value."
+  importCode={`import { useTitle } from '@kamod-ch/hooks'`}
+  signature={signatures.useTitle}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: useTextSelection
+description: Tracks current text selection and bounding box.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-text-selection/useTextSelectionDemo'
+import source from '../demos/use-text-selection/useTextSelectionDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useTextSelection"
+  description="Tracks current text selection and bounding box."
+  importCode={`import { useTextSelection } from '@kamod-ch/hooks'`}
+  signature={signatures.useTextSelection}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

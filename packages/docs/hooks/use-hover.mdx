@@ -1,0 +1,23 @@
+---
+title: useHover
+description: Tracks whether a target is hovered.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-hover/useHoverDemo'
+import source from '../demos/use-hover/useHoverDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useHover"
+  description="Tracks whether a target is hovered."
+  importCode={`import { useHover } from '@kamod-ch/hooks'`}
+  signature={signatures.useHover}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

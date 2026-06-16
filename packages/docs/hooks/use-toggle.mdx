@@ -1,0 +1,23 @@
+---
+title: useToggle
+description: Toggles between two values.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-toggle/useToggleDemo'
+import source from '../demos/use-toggle/useToggleDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useToggle"
+  description="Toggles between two values."
+  importCode={`import { useToggle } from '@kamod-ch/hooks'`}
+  signature={signatures.useToggle}
+  source={source}
+  browserOnly={false}
+  related={[{"name":"useBoolean","href":"/hooks/use-boolean"}]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

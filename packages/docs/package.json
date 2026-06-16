@@ -2,17 +2,17 @@
   "name": "@kamod-hooks/docs",
   "private": true,
   "type": "module",
-  "description": "PreactPress documentation site for @kamod-hooks/core",
+  "description": "PreactPress documentation site for @kamod-ch/hooks",
   "scripts": {
     "dev": "preactpress dev",
     "build": "preactpress build",
     "preview": "preactpress preview",
-    "check": "preactpress check"
+    "check": "node ./scripts/check-docs.mjs && preactpress check"
   },
   "devDependencies": {
-    "@kamod-hooks/core": "workspace:*",
-    "preact": "^10.28.2",
-    "preactpress": "file:../../../preactpress",
+    "@kamod-ch/hooks": "workspace:*",
+    "@kamod-ch/preactpress": "file:../../../preactpress",
+    "preact": "^10.29.2",
     "typescript": "^5.9.2"
   }
 }

@@ -1,0 +1,23 @@
+---
+title: useUpdateEffect
+description: Skips the first effect run and only reacts to updates.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-update-effect/useUpdateEffectDemo'
+import source from '../demos/use-update-effect/useUpdateEffectDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useUpdateEffect"
+  description="Skips the first effect run and only reacts to updates."
+  importCode={`import { useUpdateEffect } from '@kamod-ch/hooks'`}
+  signature={signatures.useUpdateEffect}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

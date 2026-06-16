@@ -1,0 +1,23 @@
+---
+title: useMap
+description: Map state with set, remove, and reset helpers.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-map/useMapDemo'
+import source from '../demos/use-map/useMapDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useMap"
+  description="Map state with set, remove, and reset helpers."
+  importCode={`import { useMap } from '@kamod-ch/hooks'`}
+  signature={signatures.useMap}
+  source={source}
+  browserOnly={false}
+  related={[{"name":"useSet","href":"/hooks/use-set"},{"name":"useDynamicList","href":"/hooks/use-dynamic-list"}]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

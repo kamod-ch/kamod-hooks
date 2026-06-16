@@ -1,0 +1,21 @@
+---
+title: configResponsive
+description: Override the global breakpoint map used by useResponsive.
+---
+
+import { DemoContainer } from '../components/DemoContainer'
+import { BrowserOnly } from '../components/BrowserOnly'
+import Demo from '../demos/utilities/ConfigResponsiveDemo'
+import source from '../demos/utilities/ConfigResponsiveDemo.tsx?raw'
+
+## Import
+
+```ts
+import { configResponsive } from '@kamod-ch/hooks'
+```
+
+<DemoContainer title="Custom breakpoints" description="Set a custom breakpoint map and watch useResponsive update the returned flags." source={source} browserOnly>
+  <BrowserOnly>
+    <Demo />
+  </BrowserOnly>
+</DemoContainer>

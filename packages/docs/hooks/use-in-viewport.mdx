@@ -1,0 +1,23 @@
+---
+title: useInViewport
+description: Tracks visibility with IntersectionObserver.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-in-viewport/useInViewportDemo'
+import source from '../demos/use-in-viewport/useInViewportDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useInViewport"
+  description="Tracks visibility with IntersectionObserver."
+  importCode={`import { useInViewport } from '@kamod-ch/hooks'`}
+  signature={signatures.useInViewport}
+  source={source}
+  browserOnly={true}
+  related={[{"name":"useInfiniteScroll","href":"/hooks/use-infinite-scroll"},{"name":"useVirtualList","href":"/hooks/use-virtual-list"}]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

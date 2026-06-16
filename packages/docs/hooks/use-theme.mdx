@@ -1,0 +1,23 @@
+---
+title: useTheme
+description: Tracks light, dark, and system theme modes.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-theme/useThemeDemo'
+import source from '../demos/use-theme/useThemeDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useTheme"
+  description="Tracks light, dark, and system theme modes."
+  importCode={`import { useTheme } from '@kamod-ch/hooks'`}
+  signature={signatures.useTheme}
+  source={source}
+  browserOnly={true}
+  related={[{"name":"useResponsive","href":"/hooks/use-responsive"}]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

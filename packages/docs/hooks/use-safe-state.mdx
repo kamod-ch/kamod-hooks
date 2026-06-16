@@ -1,0 +1,23 @@
+---
+title: useSafeState
+description: State setter that no-ops after unmount.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-safe-state/useSafeStateDemo'
+import source from '../demos/use-safe-state/useSafeStateDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useSafeState"
+  description="State setter that no-ops after unmount."
+  importCode={`import { useSafeState } from '@kamod-ch/hooks'`}
+  signature={signatures.useSafeState}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

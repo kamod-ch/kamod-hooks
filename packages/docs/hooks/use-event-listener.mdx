@@ -1,0 +1,23 @@
+---
+title: useEventListener
+description: Attaches DOM event listeners with cleanup.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-event-listener/useEventListenerDemo'
+import source from '../demos/use-event-listener/useEventListenerDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useEventListener"
+  description="Attaches DOM event listeners with cleanup."
+  importCode={`import { useEventListener } from '@kamod-ch/hooks'`}
+  signature={signatures.useEventListener}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

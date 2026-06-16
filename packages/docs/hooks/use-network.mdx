@@ -1,0 +1,23 @@
+---
+title: useNetwork
+description: Reports online state and network information when available.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-network/useNetworkDemo'
+import source from '../demos/use-network/useNetworkDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useNetwork"
+  description="Reports online state and network information when available."
+  importCode={`import { useNetwork } from '@kamod-ch/hooks'`}
+  signature={signatures.useNetwork}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: useFocusWithin
+description: Reports whether focus is currently inside a subtree.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-focus-within/useFocusWithinDemo'
+import source from '../demos/use-focus-within/useFocusWithinDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useFocusWithin"
+  description="Reports whether focus is currently inside a subtree."
+  importCode={`import { useFocusWithin } from '@kamod-ch/hooks'`}
+  signature={signatures.useFocusWithin}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

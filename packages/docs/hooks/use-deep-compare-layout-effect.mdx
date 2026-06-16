@@ -1,0 +1,23 @@
+---
+title: useDeepCompareLayoutEffect
+description: Layout-effect variant of useDeepCompareEffect.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-deep-compare-layout-effect/useDeepCompareLayoutEffectDemo'
+import source from '../demos/use-deep-compare-layout-effect/useDeepCompareLayoutEffectDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useDeepCompareLayoutEffect"
+  description="Layout-effect variant of useDeepCompareEffect."
+  importCode={`import { useDeepCompareLayoutEffect } from '@kamod-ch/hooks'`}
+  signature={signatures.useDeepCompareLayoutEffect}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

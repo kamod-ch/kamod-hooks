@@ -1,0 +1,23 @@
+---
+title: useThrottle
+description: Returns a throttled copy of a changing value.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-throttle/useThrottleDemo'
+import source from '../demos/use-throttle/useThrottleDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useThrottle"
+  description="Returns a throttled copy of a changing value."
+  importCode={`import { useThrottle } from '@kamod-ch/hooks'`}
+  signature={signatures.useThrottle}
+  source={source}
+  browserOnly={false}
+  related={[{"name":"useThrottleFn","href":"/hooks/use-throttle-fn"},{"name":"useDebounce","href":"/hooks/use-debounce"}]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

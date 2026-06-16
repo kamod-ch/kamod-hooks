@@ -1,0 +1,23 @@
+---
+title: useCounter
+description: Number state with increment, decrement, set, and reset actions.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-counter/useCounterDemo'
+import source from '../demos/use-counter/useCounterDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useCounter"
+  description="Number state with increment, decrement, set, and reset actions."
+  importCode={`import { useCounter } from '@kamod-ch/hooks'`}
+  signature={signatures.useCounter}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: usePrevious
+description: Stores the previous value from the last render.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-previous/usePreviousDemo'
+import source from '../demos/use-previous/usePreviousDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="usePrevious"
+  description="Stores the previous value from the last render."
+  importCode={`import { usePrevious } from '@kamod-ch/hooks'`}
+  signature={signatures.usePrevious}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

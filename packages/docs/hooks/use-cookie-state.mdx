@@ -1,0 +1,23 @@
+---
+title: useCookieState
+description: Persists a string state value in a browser cookie.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-cookie-state/useCookieStateDemo'
+import source from '../demos/use-cookie-state/useCookieStateDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useCookieState"
+  description="Persists a string state value in a browser cookie."
+  importCode={`import { useCookieState } from '@kamod-ch/hooks'`}
+  signature={signatures.useCookieState}
+  source={source}
+  browserOnly={true}
+  related={[{"name":"useLocalStorageState","href":"/hooks/use-local-storage-state"},{"name":"useSessionStorageState","href":"/hooks/use-session-storage-state"}]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

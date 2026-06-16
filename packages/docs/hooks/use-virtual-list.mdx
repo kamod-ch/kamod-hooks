@@ -1,0 +1,23 @@
+---
+title: useVirtualList
+description: Virtualizes a long list inside a scroll container.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-virtual-list/useVirtualListDemo'
+import source from '../demos/use-virtual-list/useVirtualListDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useVirtualList"
+  description="Virtualizes a long list inside a scroll container."
+  importCode={`import { useVirtualList } from '@kamod-ch/hooks'`}
+  signature={signatures.useVirtualList}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

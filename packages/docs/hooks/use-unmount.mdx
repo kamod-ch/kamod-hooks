@@ -1,0 +1,23 @@
+---
+title: useUnmount
+description: Runs cleanup logic when the component unmounts.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-unmount/useUnmountDemo'
+import source from '../demos/use-unmount/useUnmountDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useUnmount"
+  description="Runs cleanup logic when the component unmounts."
+  importCode={`import { useUnmount } from '@kamod-ch/hooks'`}
+  signature={signatures.useUnmount}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

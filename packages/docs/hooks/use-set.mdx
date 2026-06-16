@@ -1,0 +1,23 @@
+---
+title: useSet
+description: Set state with add, remove, and reset helpers.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-set/useSetDemo'
+import source from '../demos/use-set/useSetDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useSet"
+  description="Set state with add, remove, and reset helpers."
+  importCode={`import { useSet } from '@kamod-ch/hooks'`}
+  signature={signatures.useSet}
+  source={source}
+  browserOnly={false}
+  related={[{"name":"useMap","href":"/hooks/use-map"},{"name":"useSelections","href":"/hooks/use-selections"}]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: useResponsive
+description: Responsive breakpoint flags based on window width.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-responsive/useResponsiveDemo'
+import source from '../demos/use-responsive/useResponsiveDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useResponsive"
+  description="Responsive breakpoint flags based on window width."
+  importCode={`import { useResponsive } from '@kamod-ch/hooks'`}
+  signature={signatures.useResponsive}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: useDrop
+description: Reads drag, drop, and paste data from a target element.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-drop/useDropDemo'
+import source from '../demos/use-drop/useDropDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useDrop"
+  description="Reads drag, drop, and paste data from a target element."
+  importCode={`import { useDrop } from '@kamod-ch/hooks'`}
+  signature={signatures.useDrop}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

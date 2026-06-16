@@ -1,0 +1,23 @@
+---
+title: useBoolean
+description: Boolean state with setTrue, setFalse, set, and toggle helpers.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-boolean/useBooleanDemo'
+import source from '../demos/use-boolean/useBooleanDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useBoolean"
+  description="Boolean state with setTrue, setFalse, set, and toggle helpers."
+  importCode={`import { useBoolean } from '@kamod-ch/hooks'`}
+  signature={signatures.useBoolean}
+  source={source}
+  browserOnly={false}
+  related={[{"name":"useToggle","href":"/hooks/use-toggle"}]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

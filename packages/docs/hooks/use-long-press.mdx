@@ -1,0 +1,23 @@
+---
+title: useLongPress
+description: Recognizes long-press gestures with delay control.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-long-press/useLongPressDemo'
+import source from '../demos/use-long-press/useLongPressDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useLongPress"
+  description="Recognizes long-press gestures with delay control."
+  importCode={`import { useLongPress } from '@kamod-ch/hooks'`}
+  signature={signatures.useLongPress}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

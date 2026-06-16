@@ -1,0 +1,23 @@
+---
+title: useDebounce
+description: Returns a debounced copy of a changing value.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-debounce/useDebounceDemo'
+import source from '../demos/use-debounce/useDebounceDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useDebounce"
+  description="Returns a debounced copy of a changing value."
+  importCode={`import { useDebounce } from '@kamod-ch/hooks'`}
+  signature={signatures.useDebounce}
+  source={source}
+  browserOnly={false}
+  related={[{"name":"useDebounceFn","href":"/hooks/use-debounce-fn"},{"name":"useThrottle","href":"/hooks/use-throttle"}]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

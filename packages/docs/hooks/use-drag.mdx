@@ -1,0 +1,23 @@
+---
+title: useDrag
+description: Makes an element draggable and writes payload data to dataTransfer.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-drag/useDragDemo'
+import source from '../demos/use-drag/useDragDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useDrag"
+  description="Makes an element draggable and writes payload data to dataTransfer."
+  importCode={`import { useDrag } from '@kamod-ch/hooks'`}
+  signature={signatures.useDrag}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,210 @@
+---
+title: Hooks
+description: Complete reference for every public hook export in @kamod-ch/hooks.
+---
+
+import { DocsLink } from '../components/DocsLink'
+
+## Alphabetical overview
+
+<ul>
+  <li><DocsLink href="/hooks/use-boolean">useBoolean</DocsLink> — Boolean state with setTrue, setFalse, set, and toggle helpers.</li>
+  <li><DocsLink href="/hooks/use-controllable-value">useControllableValue</DocsLink> — Unifies controlled and uncontrolled component state.</li>
+  <li><DocsLink href="/hooks/use-counter">useCounter</DocsLink> — Number state with increment, decrement, set, and reset actions.</li>
+  <li><DocsLink href="/hooks/use-dynamic-list">useDynamicList</DocsLink> — Mutable-feeling list helpers for insert, remove, move, and reset.</li>
+  <li><DocsLink href="/hooks/use-event-emitter">useEventEmitter</DocsLink> — Creates a small event bus shared through hook subscriptions.</li>
+  <li><DocsLink href="/hooks/use-event-target">useEventTarget</DocsLink> — Builds value/onChange pairs from event-like targets.</li>
+  <li><DocsLink href="/hooks/use-get-state">useGetState</DocsLink> — State plus a getter that always returns the latest value.</li>
+  <li><DocsLink href="/hooks/use-history-travel">useHistoryTravel</DocsLink> — Undo and redo history for a value.</li>
+  <li><DocsLink href="/hooks/use-map">useMap</DocsLink> — Map state with set, remove, and reset helpers.</li>
+  <li><DocsLink href="/hooks/use-raf-state">useRafState</DocsLink> — State updates batched to the next animation frame.</li>
+  <li><DocsLink href="/hooks/use-reactive">useReactive</DocsLink> — Reactive proxy object that re-renders on mutation.</li>
+  <li><DocsLink href="/hooks/use-reset-state">useResetState</DocsLink> — State with a reset function for the initial value.</li>
+  <li><DocsLink href="/hooks/use-safe-state">useSafeState</DocsLink> — State setter that no-ops after unmount.</li>
+  <li><DocsLink href="/hooks/use-selections">useSelections</DocsLink> — Multi-select helpers for a collection.</li>
+  <li><DocsLink href="/hooks/use-set">useSet</DocsLink> — Set state with add, remove, and reset helpers.</li>
+  <li><DocsLink href="/hooks/use-set-state">useSetState</DocsLink> — Object state merging like class setState.</li>
+  <li><DocsLink href="/hooks/use-toggle">useToggle</DocsLink> — Toggles between two values.</li>
+  <li><DocsLink href="/hooks/use-async-effect">useAsyncEffect</DocsLink> — Runs an async effect and supports async cleanup.</li>
+  <li><DocsLink href="/hooks/use-creation">useCreation</DocsLink> — Creates a memoized value with a stable instance until deps change.</li>
+  <li><DocsLink href="/hooks/use-debounce">useDebounce</DocsLink> — Returns a debounced copy of a changing value.</li>
+  <li><DocsLink href="/hooks/use-debounce-effect">useDebounceEffect</DocsLink> — Runs an effect after dependency changes settle.</li>
+  <li><DocsLink href="/hooks/use-debounce-fn">useDebounceFn</DocsLink> — Returns a debounced function with run, cancel, and flush.</li>
+  <li><DocsLink href="/hooks/use-deep-compare-effect">useDeepCompareEffect</DocsLink> — Runs an effect when deep-equal dependencies actually change.</li>
+  <li><DocsLink href="/hooks/use-deep-compare-layout-effect">useDeepCompareLayoutEffect</DocsLink> — Layout-effect variant of useDeepCompareEffect.</li>
+  <li><DocsLink href="/hooks/use-latest">useLatest</DocsLink> — Returns a ref that always points at the latest value.</li>
+  <li><DocsLink href="/hooks/use-memoized-fn">useMemoizedFn</DocsLink> — Stable callback reference that still sees fresh state.</li>
+  <li><DocsLink href="/hooks/use-previous">usePrevious</DocsLink> — Stores the previous value from the last render.</li>
+  <li><DocsLink href="/hooks/use-throttle">useThrottle</DocsLink> — Returns a throttled copy of a changing value.</li>
+  <li><DocsLink href="/hooks/use-throttle-effect">useThrottleEffect</DocsLink> — Runs an effect at throttled intervals for dependency changes.</li>
+  <li><DocsLink href="/hooks/use-throttle-fn">useThrottleFn</DocsLink> — Returns a throttled function wrapper.</li>
+  <li><DocsLink href="/hooks/use-tracked-effect">useTrackedEffect</DocsLink> — Shows which dependency indexes changed between runs.</li>
+  <li><DocsLink href="/hooks/use-update">useUpdate</DocsLink> — Returns a function that forces a re-render.</li>
+  <li><DocsLink href="/hooks/use-update-effect">useUpdateEffect</DocsLink> — Skips the first effect run and only reacts to updates.</li>
+  <li><DocsLink href="/hooks/use-update-layout-effect">useUpdateLayoutEffect</DocsLink> — Layout-effect variant of useUpdateEffect.</li>
+  <li><DocsLink href="/hooks/use-why-did-you-update">useWhyDidYouUpdate</DocsLink> — Logs prop differences to the console for debugging.</li>
+  <li><DocsLink href="/hooks/use-isomorphic-layout-effect">useIsomorphicLayoutEffect</DocsLink> — useLayoutEffect in the browser and useEffect on the server.</li>
+  <li><DocsLink href="/hooks/use-mount">useMount</DocsLink> — Runs logic once when the component mounts.</li>
+  <li><DocsLink href="/hooks/use-unmount">useUnmount</DocsLink> — Runs cleanup logic when the component unmounts.</li>
+  <li><DocsLink href="/hooks/use-unmounted-ref">useUnmountedRef</DocsLink> — Mutable ref that flips to true after unmount.</li>
+  <li><DocsLink href="/hooks/use-click-away">useClickAway</DocsLink> — Calls a handler when interaction happens outside the target.</li>
+  <li><DocsLink href="/hooks/use-drag">useDrag</DocsLink> — Makes an element draggable and writes payload data to dataTransfer.</li>
+  <li><DocsLink href="/hooks/use-drop">useDrop</DocsLink> — Reads drag, drop, and paste data from a target element.</li>
+  <li><DocsLink href="/hooks/use-event-listener">useEventListener</DocsLink> — Attaches DOM event listeners with cleanup.</li>
+  <li><DocsLink href="/hooks/use-focus-within">useFocusWithin</DocsLink> — Reports whether focus is currently inside a subtree.</li>
+  <li><DocsLink href="/hooks/use-fullscreen">useFullscreen</DocsLink> — Controls fullscreen mode for a specific target element.</li>
+  <li><DocsLink href="/hooks/use-hover">useHover</DocsLink> — Tracks whether a target is hovered.</li>
+  <li><DocsLink href="/hooks/use-key-press">useKeyPress</DocsLink> — Runs a handler when matching keys are pressed.</li>
+  <li><DocsLink href="/hooks/use-long-press">useLongPress</DocsLink> — Recognizes long-press gestures with delay control.</li>
+  <li><DocsLink href="/hooks/use-mouse">useMouse</DocsLink> — Tracks pointer coordinates relative to the page and an element.</li>
+  <li><DocsLink href="/hooks/use-mutation-observer">useMutationObserver</DocsLink> — Subscribes to DOM mutations on a target.</li>
+  <li><DocsLink href="/hooks/use-scroll">useScroll</DocsLink> — Reads scroll position from an element or document.</li>
+  <li><DocsLink href="/hooks/use-size">useSize</DocsLink> — Reads width and height from ResizeObserver.</li>
+  <li><DocsLink href="/hooks/use-text-selection">useTextSelection</DocsLink> — Tracks current text selection and bounding box.</li>
+  <li><DocsLink href="/hooks/use-cookie-state">useCookieState</DocsLink> — Persists a string state value in a browser cookie.</li>
+  <li><DocsLink href="/hooks/use-document-visibility">useDocumentVisibility</DocsLink> — Tracks document.visibilityState.</li>
+  <li><DocsLink href="/hooks/use-external">useExternal</DocsLink> — Loads external JS or CSS and reports the loading status.</li>
+  <li><DocsLink href="/hooks/use-favicon">useFavicon</DocsLink> — Sets the current document favicon.</li>
+  <li><DocsLink href="/hooks/use-in-viewport">useInViewport</DocsLink> — Tracks visibility with IntersectionObserver.</li>
+  <li><DocsLink href="/hooks/use-infinite-scroll">useInfiniteScroll</DocsLink> — Loads the next result chunk when a scroll target reaches its edge.</li>
+  <li><DocsLink href="/hooks/use-local-storage-state">useLocalStorageState</DocsLink> — State synchronized with localStorage.</li>
+  <li><DocsLink href="/hooks/use-network">useNetwork</DocsLink> — Reports online state and network information when available.</li>
+  <li><DocsLink href="/hooks/use-responsive">useResponsive</DocsLink> — Responsive breakpoint flags based on window width.</li>
+  <li><DocsLink href="/hooks/use-session-storage-state">useSessionStorageState</DocsLink> — State synchronized with sessionStorage.</li>
+  <li><DocsLink href="/hooks/use-theme">useTheme</DocsLink> — Tracks light, dark, and system theme modes.</li>
+  <li><DocsLink href="/hooks/use-title">useTitle</DocsLink> — Sets document.title and can restore the previous value.</li>
+  <li><DocsLink href="/hooks/use-url-state">useUrlState</DocsLink> — Synchronizes state with the URL query string via History API.</li>
+  <li><DocsLink href="/hooks/use-virtual-list">useVirtualList</DocsLink> — Virtualizes a long list inside a scroll container.</li>
+  <li><DocsLink href="/hooks/use-web-socket">useWebSocket</DocsLink> — WebSocket connection state with reconnect and send helpers.</li>
+  <li><DocsLink href="/hooks/use-antd-table">useAntdTable</DocsLink> — Table request state with pagination, sorters, filters, and search helpers.</li>
+  <li><DocsLink href="/hooks/use-fusion-table">useFusionTable</DocsLink> — Fusion table helper with pagination and search state.</li>
+  <li><DocsLink href="/hooks/use-lock-fn">useLockFn</DocsLink> — Prevents overlapping async function executions.</li>
+  <li><DocsLink href="/hooks/use-pagination">usePagination</DocsLink> — Pagination state built on top of useRequest.</li>
+  <li><DocsLink href="/hooks/use-request">useRequest</DocsLink> — Async request lifecycle with loading, data, error, refresh, and plugins.</li>
+  <li><DocsLink href="/hooks/use-count-down">useCountDown</DocsLink> — Counts down to a target time and returns formatted remaining parts.</li>
+  <li><DocsLink href="/hooks/use-interval">useInterval</DocsLink> — Declarative interval tied to component lifetime.</li>
+  <li><DocsLink href="/hooks/use-raf-interval">useRafInterval</DocsLink> — Interval scheduled through requestAnimationFrame.</li>
+  <li><DocsLink href="/hooks/use-raf-timeout">useRafTimeout</DocsLink> — Timeout scheduled through requestAnimationFrame.</li>
+  <li><DocsLink href="/hooks/use-timeout">useTimeout</DocsLink> — Declarative timeout tied to component lifetime.</li>
+</ul>
+
+## State
+
+<ul>
+  <li><DocsLink href="/hooks/use-boolean">useBoolean</DocsLink> — Boolean state with setTrue, setFalse, set, and toggle helpers.</li>
+  <li><DocsLink href="/hooks/use-controllable-value">useControllableValue</DocsLink> — Unifies controlled and uncontrolled component state.</li>
+  <li><DocsLink href="/hooks/use-counter">useCounter</DocsLink> — Number state with increment, decrement, set, and reset actions.</li>
+  <li><DocsLink href="/hooks/use-dynamic-list">useDynamicList</DocsLink> — Mutable-feeling list helpers for insert, remove, move, and reset.</li>
+  <li><DocsLink href="/hooks/use-event-emitter">useEventEmitter</DocsLink> — Creates a small event bus shared through hook subscriptions.</li>
+  <li><DocsLink href="/hooks/use-event-target">useEventTarget</DocsLink> — Builds value/onChange pairs from event-like targets.</li>
+  <li><DocsLink href="/hooks/use-get-state">useGetState</DocsLink> — State plus a getter that always returns the latest value.</li>
+  <li><DocsLink href="/hooks/use-history-travel">useHistoryTravel</DocsLink> — Undo and redo history for a value.</li>
+  <li><DocsLink href="/hooks/use-map">useMap</DocsLink> — Map state with set, remove, and reset helpers.</li>
+  <li><DocsLink href="/hooks/use-raf-state">useRafState</DocsLink> — State updates batched to the next animation frame.</li>
+  <li><DocsLink href="/hooks/use-reactive">useReactive</DocsLink> — Reactive proxy object that re-renders on mutation.</li>
+  <li><DocsLink href="/hooks/use-reset-state">useResetState</DocsLink> — State with a reset function for the initial value.</li>
+  <li><DocsLink href="/hooks/use-safe-state">useSafeState</DocsLink> — State setter that no-ops after unmount.</li>
+  <li><DocsLink href="/hooks/use-selections">useSelections</DocsLink> — Multi-select helpers for a collection.</li>
+  <li><DocsLink href="/hooks/use-set">useSet</DocsLink> — Set state with add, remove, and reset helpers.</li>
+  <li><DocsLink href="/hooks/use-set-state">useSetState</DocsLink> — Object state merging like class setState.</li>
+  <li><DocsLink href="/hooks/use-toggle">useToggle</DocsLink> — Toggles between two values.</li>
+</ul>
+
+## Effects
+
+<ul>
+  <li><DocsLink href="/hooks/use-async-effect">useAsyncEffect</DocsLink> — Runs an async effect and supports async cleanup.</li>
+  <li><DocsLink href="/hooks/use-creation">useCreation</DocsLink> — Creates a memoized value with a stable instance until deps change.</li>
+  <li><DocsLink href="/hooks/use-debounce">useDebounce</DocsLink> — Returns a debounced copy of a changing value.</li>
+  <li><DocsLink href="/hooks/use-debounce-effect">useDebounceEffect</DocsLink> — Runs an effect after dependency changes settle.</li>
+  <li><DocsLink href="/hooks/use-debounce-fn">useDebounceFn</DocsLink> — Returns a debounced function with run, cancel, and flush.</li>
+  <li><DocsLink href="/hooks/use-deep-compare-effect">useDeepCompareEffect</DocsLink> — Runs an effect when deep-equal dependencies actually change.</li>
+  <li><DocsLink href="/hooks/use-deep-compare-layout-effect">useDeepCompareLayoutEffect</DocsLink> — Layout-effect variant of useDeepCompareEffect.</li>
+  <li><DocsLink href="/hooks/use-latest">useLatest</DocsLink> — Returns a ref that always points at the latest value.</li>
+  <li><DocsLink href="/hooks/use-memoized-fn">useMemoizedFn</DocsLink> — Stable callback reference that still sees fresh state.</li>
+  <li><DocsLink href="/hooks/use-previous">usePrevious</DocsLink> — Stores the previous value from the last render.</li>
+  <li><DocsLink href="/hooks/use-throttle">useThrottle</DocsLink> — Returns a throttled copy of a changing value.</li>
+  <li><DocsLink href="/hooks/use-throttle-effect">useThrottleEffect</DocsLink> — Runs an effect at throttled intervals for dependency changes.</li>
+  <li><DocsLink href="/hooks/use-throttle-fn">useThrottleFn</DocsLink> — Returns a throttled function wrapper.</li>
+  <li><DocsLink href="/hooks/use-tracked-effect">useTrackedEffect</DocsLink> — Shows which dependency indexes changed between runs.</li>
+  <li><DocsLink href="/hooks/use-update">useUpdate</DocsLink> — Returns a function that forces a re-render.</li>
+  <li><DocsLink href="/hooks/use-update-effect">useUpdateEffect</DocsLink> — Skips the first effect run and only reacts to updates.</li>
+  <li><DocsLink href="/hooks/use-update-layout-effect">useUpdateLayoutEffect</DocsLink> — Layout-effect variant of useUpdateEffect.</li>
+  <li><DocsLink href="/hooks/use-why-did-you-update">useWhyDidYouUpdate</DocsLink> — Logs prop differences to the console for debugging.</li>
+</ul>
+
+## Lifecycle
+
+<ul>
+  <li><DocsLink href="/hooks/use-isomorphic-layout-effect">useIsomorphicLayoutEffect</DocsLink> — useLayoutEffect in the browser and useEffect on the server.</li>
+  <li><DocsLink href="/hooks/use-mount">useMount</DocsLink> — Runs logic once when the component mounts.</li>
+  <li><DocsLink href="/hooks/use-unmount">useUnmount</DocsLink> — Runs cleanup logic when the component unmounts.</li>
+  <li><DocsLink href="/hooks/use-unmounted-ref">useUnmountedRef</DocsLink> — Mutable ref that flips to true after unmount.</li>
+</ul>
+
+## DOM and events
+
+<ul>
+  <li><DocsLink href="/hooks/use-click-away">useClickAway</DocsLink> — Calls a handler when interaction happens outside the target.</li>
+  <li><DocsLink href="/hooks/use-drag">useDrag</DocsLink> — Makes an element draggable and writes payload data to dataTransfer.</li>
+  <li><DocsLink href="/hooks/use-drop">useDrop</DocsLink> — Reads drag, drop, and paste data from a target element.</li>
+  <li><DocsLink href="/hooks/use-event-listener">useEventListener</DocsLink> — Attaches DOM event listeners with cleanup.</li>
+  <li><DocsLink href="/hooks/use-focus-within">useFocusWithin</DocsLink> — Reports whether focus is currently inside a subtree.</li>
+  <li><DocsLink href="/hooks/use-fullscreen">useFullscreen</DocsLink> — Controls fullscreen mode for a specific target element.</li>
+  <li><DocsLink href="/hooks/use-hover">useHover</DocsLink> — Tracks whether a target is hovered.</li>
+  <li><DocsLink href="/hooks/use-key-press">useKeyPress</DocsLink> — Runs a handler when matching keys are pressed.</li>
+  <li><DocsLink href="/hooks/use-long-press">useLongPress</DocsLink> — Recognizes long-press gestures with delay control.</li>
+  <li><DocsLink href="/hooks/use-mouse">useMouse</DocsLink> — Tracks pointer coordinates relative to the page and an element.</li>
+  <li><DocsLink href="/hooks/use-mutation-observer">useMutationObserver</DocsLink> — Subscribes to DOM mutations on a target.</li>
+  <li><DocsLink href="/hooks/use-scroll">useScroll</DocsLink> — Reads scroll position from an element or document.</li>
+  <li><DocsLink href="/hooks/use-size">useSize</DocsLink> — Reads width and height from ResizeObserver.</li>
+  <li><DocsLink href="/hooks/use-text-selection">useTextSelection</DocsLink> — Tracks current text selection and bounding box.</li>
+</ul>
+
+## Browser APIs
+
+<ul>
+  <li><DocsLink href="/hooks/use-cookie-state">useCookieState</DocsLink> — Persists a string state value in a browser cookie.</li>
+  <li><DocsLink href="/hooks/use-document-visibility">useDocumentVisibility</DocsLink> — Tracks document.visibilityState.</li>
+  <li><DocsLink href="/hooks/use-external">useExternal</DocsLink> — Loads external JS or CSS and reports the loading status.</li>
+  <li><DocsLink href="/hooks/use-favicon">useFavicon</DocsLink> — Sets the current document favicon.</li>
+  <li><DocsLink href="/hooks/use-in-viewport">useInViewport</DocsLink> — Tracks visibility with IntersectionObserver.</li>
+  <li><DocsLink href="/hooks/use-infinite-scroll">useInfiniteScroll</DocsLink> — Loads the next result chunk when a scroll target reaches its edge.</li>
+  <li><DocsLink href="/hooks/use-local-storage-state">useLocalStorageState</DocsLink> — State synchronized with localStorage.</li>
+  <li><DocsLink href="/hooks/use-network">useNetwork</DocsLink> — Reports online state and network information when available.</li>
+  <li><DocsLink href="/hooks/use-responsive">useResponsive</DocsLink> — Responsive breakpoint flags based on window width.</li>
+  <li><DocsLink href="/hooks/use-session-storage-state">useSessionStorageState</DocsLink> — State synchronized with sessionStorage.</li>
+  <li><DocsLink href="/hooks/use-theme">useTheme</DocsLink> — Tracks light, dark, and system theme modes.</li>
+  <li><DocsLink href="/hooks/use-title">useTitle</DocsLink> — Sets document.title and can restore the previous value.</li>
+  <li><DocsLink href="/hooks/use-url-state">useUrlState</DocsLink> — Synchronizes state with the URL query string via History API.</li>
+  <li><DocsLink href="/hooks/use-virtual-list">useVirtualList</DocsLink> — Virtualizes a long list inside a scroll container.</li>
+  <li><DocsLink href="/hooks/use-web-socket">useWebSocket</DocsLink> — WebSocket connection state with reconnect and send helpers.</li>
+</ul>
+
+## Async and requests
+
+<ul>
+  <li><DocsLink href="/hooks/use-antd-table">useAntdTable</DocsLink> — Table request state with pagination, sorters, filters, and search helpers.</li>
+  <li><DocsLink href="/hooks/use-fusion-table">useFusionTable</DocsLink> — Fusion table helper with pagination and search state.</li>
+  <li><DocsLink href="/hooks/use-lock-fn">useLockFn</DocsLink> — Prevents overlapping async function executions.</li>
+  <li><DocsLink href="/hooks/use-pagination">usePagination</DocsLink> — Pagination state built on top of useRequest.</li>
+  <li><DocsLink href="/hooks/use-request">useRequest</DocsLink> — Async request lifecycle with loading, data, error, refresh, and plugins.</li>
+</ul>
+
+## Timing
+
+<ul>
+  <li><DocsLink href="/hooks/use-count-down">useCountDown</DocsLink> — Counts down to a target time and returns formatted remaining parts.</li>
+  <li><DocsLink href="/hooks/use-interval">useInterval</DocsLink> — Declarative interval tied to component lifetime.</li>
+  <li><DocsLink href="/hooks/use-raf-interval">useRafInterval</DocsLink> — Interval scheduled through requestAnimationFrame.</li>
+  <li><DocsLink href="/hooks/use-raf-timeout">useRafTimeout</DocsLink> — Timeout scheduled through requestAnimationFrame.</li>
+  <li><DocsLink href="/hooks/use-timeout">useTimeout</DocsLink> — Declarative timeout tied to component lifetime.</li>
+</ul>
+
+## Utilities
+
+<ul>
+  <li><DocsLink href="/utilities/clear-cache">clearCache</DocsLink> — Clears cached useRequest results.</li>
+  <li><DocsLink href="/utilities/config-responsive">configResponsive</DocsLink> — Sets the global breakpoint map used by useResponsive.</li>
+  <li><DocsLink href="/utilities/create-update-effect">createUpdateEffect</DocsLink> — Creates an update-only effect hook from useEffect or useLayoutEffect.</li>
+</ul>

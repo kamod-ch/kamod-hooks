@@ -1,0 +1,23 @@
+---
+title: useCountDown
+description: Counts down to a target time and returns formatted remaining parts.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-count-down/useCountDownDemo'
+import source from '../demos/use-count-down/useCountDownDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useCountDown"
+  description="Counts down to a target time and returns formatted remaining parts."
+  importCode={`import { useCountDown } from '@kamod-ch/hooks'`}
+  signature={signatures.useCountDown}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

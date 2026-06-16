@@ -72,7 +72,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish @kamod-hooks/core to npm
+      - name: Publish @kamod-ch/hooks to npm
         working-directory: packages/core
         run: pnpm publish --access public --provenance --no-git-checks
         env:

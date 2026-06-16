@@ -1,0 +1,65 @@
+name: Deploy docs to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Checkout preactpress
+        run: git clone --depth 1 https://github.com/kamod-ch/preactpress.git "$(dirname "${GITHUB_WORKSPACE}")/preactpress"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Build preactpress
+        run: |
+          cd "$(dirname "${GITHUB_WORKSPACE}")/preactpress"
+          pnpm install --frozen-lockfile
+          pnpm build
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate docs
+        run: pnpm docs:check
+
+      - name: Build docs
+        run: pnpm docs:build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: packages/docs/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

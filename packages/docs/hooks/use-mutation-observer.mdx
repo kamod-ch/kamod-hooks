@@ -1,0 +1,23 @@
+---
+title: useMutationObserver
+description: Subscribes to DOM mutations on a target.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-mutation-observer/useMutationObserverDemo'
+import source from '../demos/use-mutation-observer/useMutationObserverDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useMutationObserver"
+  description="Subscribes to DOM mutations on a target."
+  importCode={`import { useMutationObserver } from '@kamod-ch/hooks'`}
+  signature={signatures.useMutationObserver}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

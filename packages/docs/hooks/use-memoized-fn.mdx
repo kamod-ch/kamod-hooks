@@ -1,0 +1,23 @@
+---
+title: useMemoizedFn
+description: Stable callback reference that still sees fresh state.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-memoized-fn/useMemoizedFnDemo'
+import source from '../demos/use-memoized-fn/useMemoizedFnDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useMemoizedFn"
+  description="Stable callback reference that still sees fresh state."
+  importCode={`import { useMemoizedFn } from '@kamod-ch/hooks'`}
+  signature={signatures.useMemoizedFn}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

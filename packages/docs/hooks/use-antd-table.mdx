@@ -1,0 +1,23 @@
+---
+title: useAntdTable
+description: Table request state with pagination, sorters, filters, and search helpers.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-antd-table/useAntdTableDemo'
+import source from '../demos/use-antd-table/useAntdTableDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useAntdTable"
+  description="Table request state with pagination, sorters, filters, and search helpers."
+  importCode={`import { useAntdTable } from '@kamod-ch/hooks'`}
+  signature={signatures.useAntdTable}
+  source={source}
+  browserOnly={false}
+  related={[{"name":"usePagination","href":"/hooks/use-pagination"},{"name":"useFusionTable","href":"/hooks/use-fusion-table"}]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: useWebSocket
+description: WebSocket connection state with reconnect and send helpers.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-web-socket/useWebSocketDemo'
+import source from '../demos/use-web-socket/useWebSocketDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useWebSocket"
+  description="WebSocket connection state with reconnect and send helpers."
+  importCode={`import { useWebSocket } from '@kamod-ch/hooks'`}
+  signature={signatures.useWebSocket}
+  source={source}
+  browserOnly={true}
+  related={[]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

@@ -1,0 +1,23 @@
+---
+title: useGetState
+description: State plus a getter that always returns the latest value.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-get-state/useGetStateDemo'
+import source from '../demos/use-get-state/useGetStateDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useGetState"
+  description="State plus a getter that always returns the latest value."
+  importCode={`import { useGetState } from '@kamod-ch/hooks'`}
+  signature={signatures.useGetState}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>

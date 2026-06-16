@@ -1,0 +1,23 @@
+---
+title: useInfiniteScroll
+description: Loads the next result chunk when a scroll target reaches its edge.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-infinite-scroll/useInfiniteScrollDemo'
+import source from '../demos/use-infinite-scroll/useInfiniteScrollDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useInfiniteScroll"
+  description="Loads the next result chunk when a scroll target reaches its edge."
+  importCode={`import { useInfiniteScroll } from '@kamod-ch/hooks'`}
+  signature={signatures.useInfiniteScroll}
+  source={source}
+  browserOnly={true}
+  related={[{"name":"useInViewport","href":"/hooks/use-in-viewport"},{"name":"useRequest","href":"/hooks/use-request"}]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

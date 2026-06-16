@@ -1,0 +1,23 @@
+---
+title: useLocalStorageState
+description: State synchronized with localStorage.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-local-storage-state/useLocalStorageStateDemo'
+import source from '../demos/use-local-storage-state/useLocalStorageStateDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useLocalStorageState"
+  description="State synchronized with localStorage."
+  importCode={`import { useLocalStorageState } from '@kamod-ch/hooks'`}
+  signature={signatures.useLocalStorageState}
+  source={source}
+  browserOnly={true}
+  related={[{"name":"useSessionStorageState","href":"/hooks/use-session-storage-state"},{"name":"useCookieState","href":"/hooks/use-cookie-state"}]}
+  ssr={"This hook touches browser APIs. Render it after mount or guard it with BrowserOnly in SSR and static builds."}
+  browser={"Requires the corresponding browser API to exist in the current environment."}
+>
+  <Demo />
+</HookDoc>

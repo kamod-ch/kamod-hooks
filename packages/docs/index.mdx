@@ -1,0 +1,147 @@
+---
+title: Production-ready hooks for Preact
+description: A lightweight collection of typed, tree-shakeable hooks built specifically for Preact.
+---
+
+import { InstallTabs } from './components/InstallTabs'
+import { BrowserOnly } from './components/BrowserOnly'
+import { DemoContainer } from './components/DemoContainer'
+import { DocsLink } from './components/DocsLink'
+import UseToggleDemo from './demos/use-toggle/useToggleDemo'
+import useToggleSource from './demos/use-toggle/useToggleDemo.tsx?raw'
+import UseCounterDemo from './demos/use-counter/useCounterDemo'
+import useCounterSource from './demos/use-counter/useCounterDemo.tsx?raw'
+import UseDebounceDemo from './demos/use-debounce/useDebounceDemo'
+import useDebounceSource from './demos/use-debounce/useDebounceDemo.tsx?raw'
+import UseLocalStorageStateDemo from './demos/use-local-storage-state/useLocalStorageStateDemo'
+import useLocalStorageStateSource from './demos/use-local-storage-state/useLocalStorageStateDemo.tsx?raw'
+
+<div class="landing-shell tanstack-landing">
+  <div class="hero-grid">
+    <section class="hero-copy">
+      <div class="hero-badge-row">
+        <span class="hero-badge">kamod-hooks</span>
+        <span class="hero-badge hero-badge-muted">Typed · Tree-shakeable · Preact-first</span>
+      </div>
+      <div class="hero-kicker">Hooks for modern Preact apps</div>
+      <h1>Production-ready hooks for Preact</h1>
+      <p>A lightweight collection of typed, tree-shakeable hooks built specifically for Preact.</p>
+      <div class="hero-actions">
+        <DocsLink href="/guide/getting-started">Get started</DocsLink>
+        <DocsLink href="/hooks">Browse hooks</DocsLink>
+        <a href="https://github.com/kamod-ch/kamod-hooks">View on GitHub</a>
+      </div>
+      <div class="hero-lower-grid">
+        <div class="hero-stats">
+          <div><strong>78</strong><span>documented hooks</span></div>
+          <div><strong>81</strong><span>live demos</span></div>
+          <div><strong>0</strong><span>runtime deps in core</span></div>
+        </div>
+        <div class="hero-install-card">
+          <h2>Install</h2>
+          <InstallTabs />
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-card hero-demo-card">
+      <div class="hero-demo-header">
+        <span class="hero-demo-pill">Live demo</span>
+        <span class="hero-demo-pill hero-demo-pill-soft">Exact source included</span>
+      </div>
+      <DemoContainer title="Hero demo" description="Toggle between two real values with useToggle." source={useToggleSource}>
+        <UseToggleDemo />
+      </DemoContainer>
+    </section>
+  </div>
+
+  <div class="hero-subgrid">
+    <div class="hero-subcard">
+      <span class="hero-subcard-icon">◧</span>
+      <h3>Built for production docs</h3>
+      <p>Every public hook page combines an interactive demo, the exact source code, and the generated TypeScript signature.</p>
+    </div>
+    <div class="hero-subcard">
+      <span class="hero-subcard-icon">◌</span>
+      <h3>SSR-aware examples</h3>
+      <p>Browser-only demos are guarded so static builds and local previews stay stable.</p>
+    </div>
+    <div class="hero-subcard">
+      <span class="hero-subcard-icon">↗</span>
+      <h3>Fast to browse</h3>
+      <p>Use search, grouped navigation, and the hooks index to jump directly to the API you need.</p>
+    </div>
+  </div>
+</div>
+
+<section class="landing-section">
+  <div class="section-heading">
+    <span>Why kamod-hooks</span>
+    <h2>Focused on real Preact usage</h2>
+    <p>The library mirrors the actual implementation in <code>packages/core</code>, not imagined API surface.</p>
+  </div>
+
+  <div class="feature-grid">
+    <article>
+      <span class="feature-icon">⚡</span>
+      <h3>Preact-first</h3>
+      <p>Every hook is built for Preact, not React compatibility wrappers.</p>
+    </article>
+    <article>
+      <span class="feature-icon">TS</span>
+      <h3>Fully typed</h3>
+      <p>The implementation and distributed TypeScript declarations are the source of truth.</p>
+    </article>
+    <article>
+      <span class="feature-icon">⊡</span>
+      <h3>Tree-shakeable</h3>
+      <p>Use the root barrel or per-hook subpath exports without extra runtime dependencies.</p>
+    </article>
+    <article>
+      <span class="feature-icon">◎</span>
+      <h3>Browser-native</h3>
+      <p>IntersectionObserver, ResizeObserver, History API, storage, and more.</p>
+    </article>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="section-heading">
+    <span>Live examples</span>
+    <h2>Try a few hooks instantly</h2>
+    <p>Each card renders a real Preact component and can reveal the exact source used by the demo.</p>
+  </div>
+
+  <div class="mini-demo-toolbar">
+    <span>Interactive examples</span>
+    <DocsLink href="/hooks">See all hook pages →</DocsLink>
+  </div>
+
+  <div class="mini-demo-grid">
+    <DemoContainer title="useCounter" description="Increment, decrement, set, and reset a bounded counter." source={useCounterSource}>
+      <UseCounterDemo />
+    </DemoContainer>
+    <DemoContainer title="useDebounce" description="See the debounced value settle after typing stops." source={useDebounceSource}>
+      <UseDebounceDemo />
+    </DemoContainer>
+    <DemoContainer title="useLocalStorageState" description="Persist a small state value into localStorage with a namespaced key." source={useLocalStorageStateSource} browserOnly>
+      <BrowserOnly>
+        <UseLocalStorageStateDemo />
+      </BrowserOnly>
+    </DemoContainer>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="section-heading">
+    <span>Explore</span>
+    <h2>Move from overview to implementation details</h2>
+    <p>Start with the guide, scan the full hooks index, or jump to the exported utilities.</p>
+  </div>
+
+  <div class="hook-grid">
+    <DocsLink href="/guide/getting-started"><h3>Guides</h3><p>Install, import, SSR notes, TypeScript usage, and migration details.</p></DocsLink>
+    <DocsLink href="/hooks"><h3>Hooks reference</h3><p>Every public hook export has its own page, live demo, and source snippet.</p></DocsLink>
+    <DocsLink href="/utilities/clear-cache"><h3>Utilities</h3><p>Reference pages for clearCache, configResponsive, and createUpdateEffect.</p></DocsLink>
+  </div>
+</section>

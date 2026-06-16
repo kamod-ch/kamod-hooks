@@ -1,0 +1,23 @@
+---
+title: useUpdate
+description: Returns a function that forces a re-render.
+---
+
+import { HookDoc } from '../components/HookDoc'
+import Demo from '../demos/use-update/useUpdateDemo'
+import source from '../demos/use-update/useUpdateDemo.tsx?raw'
+import { signatures } from '../generated/hookData'
+
+<HookDoc
+  name="useUpdate"
+  description="Returns a function that forces a re-render."
+  importCode={`import { useUpdate } from '@kamod-ch/hooks'`}
+  signature={signatures.useUpdate}
+  source={source}
+  browserOnly={false}
+  related={[]}
+  ssr={"This hook is safe to import during SSR. If your effect body touches the DOM, keep that work inside the effect callback."}
+  browser={"Works in any modern browser supported by Preact."}
+>
+  <Demo />
+</HookDoc>
