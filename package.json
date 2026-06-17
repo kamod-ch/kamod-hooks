@@ -19,6 +19,7 @@
     "docs:check": "pnpm --filter @kamod-hooks/docs check",
     "docs:build": "pnpm --filter @kamod-ch/hooks build && pnpm --filter @kamod-hooks/docs build",
     "docs:preview": "pnpm --filter @kamod-hooks/docs preview",
+    "sync:readmes": "node scripts/sync-readmes.mjs",
     "qa:publint": "pnpm --filter @kamod-ch/hooks publint",
     "qa:attw": "pnpm --filter @kamod-ch/hooks attw",
     "qa:package": "pnpm --filter @kamod-ch/hooks build && pnpm qa:publint && pnpm qa:attw"

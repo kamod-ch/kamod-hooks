@@ -1,11 +1,11 @@
 # kamod-hooks
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](https://github.com/kamod-ch/kamod-hooks/blob/main/LICENSE)
 [![Preact](https://img.shields.io/badge/preact-10%2B-673ab8.svg)](https://preactjs.com/)
 [![Docs](https://img.shields.io/badge/docs-live-0ea5a4.svg)](https://kamod-ch.github.io/kamod-hooks/)
 [![Demo](https://img.shields.io/badge/demo-interactive-334155.svg)](https://kamod-ch.github.io/kamod-hooks/)
 
-[![kamod-hooks docs preview](assets/readme-banner.svg)](https://kamod-ch.github.io/kamod-hooks/)
+[![kamod-hooks docs preview](https://raw.githubusercontent.com/kamod-ch/kamod-hooks/main/assets/readme-banner.svg)](https://kamod-ch.github.io/kamod-hooks/)
 
 Production-ready hooks for **Preact** — fast to adopt, easy to tree-shake, and built with **zero runtime dependencies** beyond `preact` itself.
 
@@ -136,7 +136,7 @@ The fastest way to understand the library is to try the live documentation:
 - **Hooks index:** https://kamod-ch.github.io/kamod-hooks/hooks
 - **Guide:** https://kamod-ch.github.io/kamod-hooks/guide/introduction
 
-Run the local demo/dev site:
+Run the local demo/dev site from the repository root:
 
 ```bash
 pnpm install
@@ -179,7 +179,7 @@ It includes:
 - search and outline navigation
 - static deployment support for GitHub Pages
 
-Run locally:
+Run locally from the repository root:
 
 ```bash
 pnpm docs:dev
@@ -355,4 +355,4 @@ pnpm docs:check
 
 ## License
 
-Released under the MIT License. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+Released under the MIT License. See [LICENSE](https://github.com/kamod-ch/kamod-hooks/blob/main/LICENSE) and [NOTICE](https://github.com/kamod-ch/kamod-hooks/blob/main/NOTICE).
