@@ -1,13 +1,17 @@
 import { defineConfig } from '@kamod-ch/preactpress/config'
 import { hookSidebar } from '../generated/sidebar'
 
+const isGithubPagesBuild = process.env.GITHUB_ACTIONS === 'true' || process.env.KAMOD_DOCS_BASE === 'github-pages'
+const base = isGithubPagesBuild ? '/kamod-hooks/' : '/'
+const url = isGithubPagesBuild ? 'https://kamod-ch.github.io' : 'http://localhost:4173'
+
 export default defineConfig({
   theme: './theme/Layout.tsx',
   site: {
     title: 'kamod-hooks',
     description: 'Production-ready hooks for Preact.',
-    base: '/kamod-hooks/',
-    url: 'https://kamod-ch.github.io/kamod-hooks/'
+    base,
+    url
   },
   markdown: {
     html: false,
@@ -18,7 +22,7 @@ export default defineConfig({
     outline: true,
     search: true,
     lastUpdated: true,
-    footer: 'kamod-hooks · MIT',
+    footer: 'Released under the MIT License.\n\nCopyright © 2026 Klaus Zahiragic - www.kamod.ch',
     editLink: {
       text: 'Edit this page',
       pattern: 'https://github.com/kamod-ch/kamod-hooks/edit/main/packages/docs/:path'

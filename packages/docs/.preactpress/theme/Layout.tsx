@@ -24,6 +24,10 @@ function isActive(routePath: string, link: string): boolean {
   return route === target || (target !== '/' && route.startsWith(`${target}/`))
 }
 
+function isExactMatch(routePath: string, link: string): boolean {
+  return normalizeLink(routePath) === normalizeLink(link)
+}
+
 function childText(children: ComponentChildren): string {
   if (children == null || typeof children === 'boolean') return ''
   if (typeof children === 'string' || typeof children === 'number') return String(children)
@@ -90,7 +94,7 @@ const Layout: FunctionalComponent<LayoutProps> = ({
       }))
       .filter((group) => group.items.length > 0)
   }, [normalizedQuery, themeConfig.sidebar])
-  const activeIndex = sidebarItems.findIndex((item) => isActive(routePath, item.link))
+  const activeIndex = sidebarItems.findIndex((item) => isExactMatch(routePath, item.link))
   const previous = activeIndex > 0 ? sidebarItems[activeIndex - 1] : undefined
   const next =
     activeIndex >= 0 && activeIndex < sidebarItems.length - 1
@@ -164,8 +168,7 @@ const Layout: FunctionalComponent<LayoutProps> = ({
       </header>
       <div class="pp-body">
         <aside class="pp-sidebar" aria-label="Site navigation">
-          <details class="pp-sidebar-panel" open>
-            <summary>Navigation</summary>
+          <div class="pp-sidebar-panel">
             {themeConfig.search ? (
               <label class="pp-search">
                 <span>Search</span>
@@ -177,30 +180,35 @@ const Layout: FunctionalComponent<LayoutProps> = ({
                 />
               </label>
             ) : null}
-            {visibleSidebar.map((group, gi) => (
-              <div key={gi} class="pp-sidebar-group">
-                {group.text ? (
-                  <div class="pp-sidebar-heading">{group.text}</div>
-                ) : null}
-                <ul>
-                  {group.items.map((it) => {
-                    const active = isActive(routePath, it.link)
-                    return (
-                      <li key={it.link}>
-                        <a
-                          class={active ? 'active' : ''}
-                          href={withBase(site.base, it.link)}
-                          aria-current={active ? 'page' : undefined}
-                        >
-                          {it.text}
-                        </a>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            ))}
-          </details>
+            {visibleSidebar.map((group, gi) => {
+              const groupHasActiveItem = group.items.some((item) => isActive(routePath, item.link))
+              const isGuideGroup = group.text === 'Guide'
+              const groupOpen = Boolean(normalizedQuery) || groupHasActiveItem || isGuideGroup || gi === 0
+              return (
+                <details key={gi} class="pp-sidebar-group" open={groupOpen}>
+                  {group.text ? (
+                    <summary class="pp-sidebar-heading">{group.text}</summary>
+                  ) : null}
+                  <ul>
+                    {group.items.map((it) => {
+                      const active = isActive(routePath, it.link)
+                      return (
+                        <li key={it.link}>
+                          <a
+                            class={active ? 'active' : ''}
+                            href={withBase(site.base, it.link)}
+                            aria-current={active ? 'page' : undefined}
+                          >
+                            {it.text}
+                          </a>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </details>
+              )
+            })}
+          </div>
         </aside>
         <main id="content" class="pp-main">
           <article class="pp-doc">

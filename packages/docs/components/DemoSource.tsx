@@ -5,7 +5,7 @@ interface DemoSourceProps {
   defaultOpen?: boolean
 }
 
-export function DemoSource({ source, defaultOpen = false }: DemoSourceProps) {
+export function DemoSource({ source, defaultOpen = true }: DemoSourceProps) {
   const [open, setOpen] = useState(defaultOpen)
 
   return (
