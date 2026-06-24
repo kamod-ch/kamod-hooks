@@ -2,7 +2,7 @@ import { defineConfig } from '@kamod-ch/preactpress/config'
 import { hookSidebar } from '../generated/sidebar'
 
 const matomoImageTracker =
-  '<!-- Matomo Image Tracker--><img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.kamod.ch/matomo.php?idsite=6&amp;rec=1" style="border:0" alt="" /><!-- End Matomo -->'
+  '<!-- Matomo Image Tracker--><img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.kamod.ch/matomo.php?idsite=7&amp;rec=1" style="border:0" alt="" /><!-- End Matomo -->'
 
 const includeMatomoImageTracker = process.env.PREACTPRESS_INCLUDE_MATOMO === 'true'
 
