@@ -47,6 +47,8 @@ jobs:
 
       - name: Build docs
         run: pnpm docs:build
+        env:
+          PREACTPRESS_INCLUDE_MATOMO: 'true'
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

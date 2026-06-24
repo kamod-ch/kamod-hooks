@@ -1,6 +1,11 @@
 import { defineConfig } from '@kamod-ch/preactpress/config'
 import { hookSidebar } from '../generated/sidebar'
 
+const matomoImageTracker =
+  '<!-- Matomo Image Tracker--><img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.kamod.ch/matomo.php?idsite=6&amp;rec=1" style="border:0" alt="" /><!-- End Matomo -->'
+
+const includeMatomoImageTracker = process.env.PREACTPRESS_INCLUDE_MATOMO === 'true'
+
 const isGithubPagesBuild = process.env.GITHUB_ACTIONS === 'true' || process.env.KAMOD_DOCS_BASE === 'github-pages'
 const base = isGithubPagesBuild ? '/kamod-hooks/' : '/'
 const url = isGithubPagesBuild ? 'https://kamod-ch.github.io' : 'http://localhost:4173'
@@ -17,6 +22,10 @@ export default defineConfig({
     html: false,
     linkify: true,
     typographer: true
+  },
+  transformHtml(html) {
+    if (!includeMatomoImageTracker) return html
+    return html.replace('</body>', `  ${matomoImageTracker}\n  </body>`)
   },
   themeConfig: {
     outline: true,
