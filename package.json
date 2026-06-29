@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "license": "MIT",
+  "author": "Klaus Zahiragic <watzak>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kamod-ch/kamod-hooks.git"
