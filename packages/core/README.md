@@ -6,7 +6,7 @@
 [![Docs](https://img.shields.io/badge/docs-live-0ea5a4.svg)](https://kamod-ch.github.io/kamod-hooks/)
 [![Demo](https://img.shields.io/badge/demo-interactive-334155.svg)](https://kamod-ch.github.io/kamod-hooks/)
 
-[![kamod-hooks docs preview](https://raw.githubusercontent.com/kamod-ch/kamod-hooks/main/assets/readme-banner.svg)](https://kamod-ch.github.io/kamod-hooks/)
+[![kamod-hooks docs preview](https://github.com/kamod-ch/kamod-hooks/raw/main/assets/readme-banner.svg)](https://kamod-ch.github.io/kamod-hooks/)
 
 Production-ready hooks for **Preact** — fast to adopt, easy to tree-shake, and built with **zero runtime dependencies** beyond `preact` itself.
 
