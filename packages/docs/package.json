@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@kamod-ch/hooks": "workspace:*",
-    "@kamod-ch/preactpress": "file:../../../preactpress",
+    "@kamod-ch/preactpress": "^1.0.3",
     "preact": "^10.29.2",
     "typescript": "^5.9.2"
   }
