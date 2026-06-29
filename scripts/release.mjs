@@ -97,7 +97,7 @@ run(`git commit -m "chore(core): release v${newVersion}"`)
 run(`git tag v${newVersion}`)
 
 console.log('\n[release] Publishing to npm from packages/core …')
-run('pnpm publish --access public --provenance --no-git-checks', { cwd: coreDir })
+run('pnpm publish --access public --no-git-checks', { cwd: coreDir })
 
 run('git push origin main')
 run(`git push origin v${newVersion}`)

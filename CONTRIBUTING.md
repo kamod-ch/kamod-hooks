@@ -97,7 +97,7 @@ pnpm run release        # patch bump, verify, npm publish, push commit + tag
 # pnpm run release:minor / release:major for other semver bumps
 ```
 
-The release script runs the same gates as CI (`pnpm run verify`: typecheck, tests, build, package QA, docs check), bumps `packages/core/package.json`, publishes with provenance, and pushes the release commit and `v*` tag.
+The release script runs the same gates as CI (`pnpm run verify`: typecheck, tests, build, package QA, docs check), bumps `packages/core/package.json`, publishes to npm (local publish without provenance — provenance requires GitHub Actions OIDC), and pushes the release commit and `v*` tag.
 
 After a successful release:
 
