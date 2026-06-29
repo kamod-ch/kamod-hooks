@@ -13,7 +13,7 @@ const url = isGithubPagesBuild ? 'https://kamod-ch.github.io' : 'http://localhos
 export default defineConfig({
   theme: './theme/Layout.tsx',
   site: {
-    title: 'kamod-hooks',
+    title: 'kamod Hooks',
     description: 'Production-ready hooks for Preact.',
     base,
     url

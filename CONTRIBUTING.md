@@ -89,6 +89,20 @@ Vitest runs in `packages/core` (`pnpm test` from root). New behavior should incl
 
 ## Releases
 
-Publishing is tag-driven: push a tag matching `v*` (for example `v0.1.1`) to trigger the GitHub Actions publish workflow for `@kamod-hooks/core` on npm. Configure the `NPM_TOKEN` repository secret with publish access to the `@kamod-hooks` scope.
+`@kamod-ch/hooks` is published to npm from `packages/core`. Releases run locally from a clean `main` branch after `npm login`.
+
+```bash
+pnpm run release:dry    # verify gates + inspect tarball without bumping or publishing
+pnpm run release        # patch bump, verify, npm publish, push commit + tag
+# pnpm run release:minor / release:major for other semver bumps
+```
+
+The release script runs the same gates as CI (`pnpm run verify`: typecheck, tests, build, package QA, docs check), bumps `packages/core/package.json`, publishes with provenance, and pushes the release commit and `v*` tag.
+
+After a successful release:
+
+1. Confirm npm: `npm view @kamod-ch/hooks version`
+2. Push any remaining doc or branding commits to `main` — the GitHub Pages workflow deploys docs automatically
+3. Optionally run `pnpm sync:readmes` if the root README changed
 
 Granular per-hook subpath exports are backward compatible with the root barrel API and should ship as the next minor release on the current major line, for example `v1.1.0` after `v1.0.x`.

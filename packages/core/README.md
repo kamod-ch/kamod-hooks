@@ -1,5 +1,6 @@
 # kamod-hooks
 
+[![npm version](https://img.shields.io/npm/v/@kamod-ch/hooks)](https://www.npmjs.com/package/@kamod-ch/hooks)
 [![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](https://github.com/kamod-ch/kamod-hooks/blob/main/LICENSE)
 [![Preact](https://img.shields.io/badge/preact-10%2B-673ab8.svg)](https://preactjs.com/)
 [![Docs](https://img.shields.io/badge/docs-live-0ea5a4.svg)](https://kamod-ch.github.io/kamod-hooks/)
@@ -96,8 +97,6 @@ The project ships with a documentation site that doubles as a live demo environm
 ```bash
 pnpm add @kamod-ch/hooks preact
 ```
-
-> npm badge can be added as soon as the public package page is available.
 
 ## Basic usage
 

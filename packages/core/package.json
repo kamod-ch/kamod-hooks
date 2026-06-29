@@ -4,6 +4,10 @@
   "type": "module",
   "description": "Preact hooks — zero runtime npm dependencies (peer: preact only).",
   "license": "MIT",
+  "homepage": "https://kamod-ch.github.io/kamod-hooks/",
+  "bugs": {
+    "url": "https://github.com/kamod-ch/kamod-hooks/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kamod-ch/kamod-hooks.git",

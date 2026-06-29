@@ -23,7 +23,12 @@
     "sync:readmes": "node scripts/sync-readmes.mjs",
     "qa:publint": "pnpm --filter @kamod-ch/hooks publint",
     "qa:attw": "pnpm --filter @kamod-ch/hooks attw",
-    "qa:package": "pnpm --filter @kamod-ch/hooks build && pnpm qa:publint && pnpm qa:attw"
+    "qa:package": "pnpm --filter @kamod-ch/hooks build && pnpm qa:publint && pnpm qa:attw",
+    "verify": "pnpm typecheck && pnpm test:ci && pnpm build && pnpm qa:package && pnpm docs:check",
+    "release": "node ./scripts/release.mjs patch",
+    "release:minor": "node ./scripts/release.mjs minor",
+    "release:major": "node ./scripts/release.mjs major",
+    "release:dry": "node ./scripts/release.mjs patch --dry"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
