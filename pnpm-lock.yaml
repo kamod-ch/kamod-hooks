@@ -54,8 +54,8 @@ importers:
         specifier: workspace:*
         version: link:../core
       '@kamod-ch/preactpress':
-        specifier: file:../../../preactpress
-        version: file:../preactpress(@babel/core@7.29.0)(@types/node@25.9.2)(esbuild@0.27.7)(rollup@4.60.3)
+        specifier: ^1.0.3
+        version: 1.0.3(@babel/core@7.29.0)(@types/node@25.9.2)(esbuild@0.27.7)(rollup@4.60.3)
       preact:
         specifier: ^10.29.2
         version: 10.29.2
@@ -435,8 +435,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@kamod-ch/preactpress@file:../preactpress':
-    resolution: {directory: ../preactpress, type: directory}
+  '@kamod-ch/preactpress@1.0.3':
+    resolution: {integrity: sha512-B+683YcceDQQiodzyETVhkWdOtsCCcKRQKdAvsnoizyzs06GBbI8kn5o7ohyy69HRYCJ19uYc1Wry6dVGN7hZg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2793,7 +2793,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@kamod-ch/preactpress@file:../preactpress(@babel/core@7.29.0)(@types/node@25.9.2)(esbuild@0.27.7)(rollup@4.60.3)':
+  '@kamod-ch/preactpress@1.0.3(@babel/core@7.29.0)(@types/node@25.9.2)(esbuild@0.27.7)(rollup@4.60.3)':
     dependencies:
       '@docsearch/css': 4.6.3
       '@docsearch/js': 4.6.3
