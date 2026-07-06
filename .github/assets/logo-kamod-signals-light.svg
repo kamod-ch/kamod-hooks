@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="105" viewBox="0 0 780 105" role="img" aria-label="Kamod Signals">
+  <title>Kamod Signals</title>
+  <rect width="780" height="105" rx="24" fill="none"/>
+  <text x="30" y="72" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="800" font-size="64" fill="#f8fafc" letter-spacing="-0.05em">kamod</text>
+  <text x="247" y="72" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="800" font-size="64" fill="#2dd4bf" letter-spacing="-0.04em">Signals</text>
+  <circle cx="584" cy="53" r="9" fill="#f9a01b"/>
+  <circle cx="648" cy="30" r="7" fill="#2dd4bf"/>
+  <circle cx="648" cy="76" r="7" fill="#2dd4bf"/>
+  <path d="M593 50l47-17M593 56l47 17" fill="none" stroke="#2dd4bf" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -23,6 +23,10 @@ export default defineConfig({
     linkify: true,
     typographer: true
   },
+  head: [
+    ['link', { rel: 'icon', href: `${base}favicon.svg`, type: 'image/svg+xml' }],
+    ['link', { rel: 'apple-touch-icon', href: `${base}favicon.svg` }]
+  ],
   transformHtml(html) {
     if (!includeMatomoImageTracker) return html
     return html.replace('</body>', `  ${matomoImageTracker}\n  </body>`)
