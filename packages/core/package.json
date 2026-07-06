@@ -351,10 +351,11 @@
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "publint": "publint",
-    "attw": "attw --pack . --profile esm-only"
+    "attw": "attw --pack . --profile esm-only",
+    "clean": "rm -rf dist"
   },
   "peerDependencies": {
-    "preact": "^10.29.2"
+    "preact": "^10.29.3"
   },
   "dependencies": {},
   "devDependencies": {
@@ -363,10 +364,35 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/preact": "^3.2.4",
     "jsdom": "^29.1.1",
-    "preact": "^10.29.2",
+    "preact": "^10.29.3",
     "preact-render-to-string": "^6.7.0",
     "publint": "^0.3.21",
     "tsup": "^8.5.1",
-    "vitest": "^4.1.8"
-  }
+    "vitest": "^4.1.8",
+    "typescript": "~5.9.3"
+  },
+  "keywords": [
+    "preact",
+    "hooks",
+    "react-hooks",
+    "preact-hooks",
+    "typescript",
+    "tree-shaking",
+    "tree-shakeable",
+    "utilities",
+    "browser-apis",
+    "state-management",
+    "async",
+    "lifecycle",
+    "dom-hooks",
+    "kamod-ui",
+    "kamod-hooks",
+    "preactpress",
+    "npm-package",
+    "frontend",
+    "webdev",
+    "developer-tools"
+  ],
+  "packageManager": "pnpm@10.12.4",
+  "module": "./dist/index.js"
 }

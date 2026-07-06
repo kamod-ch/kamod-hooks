@@ -1,5 +1,7 @@
 packages:
-  - packages/*
+  - "packages/*"
 
-ignoredBuiltDependencies:
-  - esbuild
+allowBuilds:
+  esbuild: true
+minimumReleaseAgeExclude:
+  - '@kamod-ch/preactpress@2.0.0'

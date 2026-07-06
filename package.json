@@ -11,19 +11,29 @@
     "url": "git+https://github.com/kamod-ch/kamod-hooks.git"
   },
   "scripts": {
+    "prepublishOnly": "node -e \"console.error('Do not publish the workspace root. Use: pnpm publish:core'); process.exit(1)\"",
     "build": "pnpm -r build",
+    "build:core": "pnpm --filter @kamod-ch/hooks build",
+    "build:hooks": "pnpm --filter @kamod-ch/hooks build",
+    "build:docs": "pnpm --filter @kamod-hooks/docs build",
     "test": "pnpm --filter @kamod-ch/hooks test",
     "test:ci": "pnpm test",
     "typecheck": "pnpm -r typecheck",
     "demo": "pnpm docs:dev",
+    "dev:docs": "pnpm --filter @kamod-hooks/docs dev",
     "docs:dev": "pnpm --filter @kamod-hooks/docs dev",
+    "check:docs": "pnpm --filter @kamod-hooks/docs check",
     "docs:check": "pnpm --filter @kamod-hooks/docs check",
     "docs:build": "pnpm --filter @kamod-ch/hooks build && pnpm --filter @kamod-hooks/docs build",
+    "preview:docs": "pnpm --filter @kamod-hooks/docs preview",
     "docs:preview": "pnpm --filter @kamod-hooks/docs preview",
+    "clean": "pnpm --filter @kamod-ch/hooks clean && rm -rf packages/docs/dist",
     "sync:readmes": "node scripts/sync-readmes.mjs",
     "qa:publint": "pnpm --filter @kamod-ch/hooks publint",
     "qa:attw": "pnpm --filter @kamod-ch/hooks attw",
     "qa:package": "pnpm --filter @kamod-ch/hooks build && pnpm qa:publint && pnpm qa:attw",
+    "pack:core": "pnpm --filter @kamod-ch/hooks exec npm pack --dry-run",
+    "publish:core": "pnpm --filter @kamod-ch/hooks publish --access public",
     "verify": "pnpm typecheck && pnpm test:ci && pnpm build && pnpm qa:package && pnpm docs:check",
     "release": "node ./scripts/release.mjs patch",
     "release:minor": "node ./scripts/release.mjs minor",
@@ -31,8 +41,36 @@
     "release:dry": "node ./scripts/release.mjs patch --dry"
   },
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "typescript": "^5.9.2"
+    "@types/node": "^25.9.2",
+    "typescript": "~5.9.3"
   },
-  "packageManager": "pnpm@10.12.4"
+  "packageManager": "pnpm@10.12.4",
+  "keywords": [
+    "preact",
+    "hooks",
+    "react-hooks",
+    "preact-hooks",
+    "typescript",
+    "tree-shaking",
+    "tree-shakeable",
+    "utilities",
+    "browser-apis",
+    "state-management",
+    "async",
+    "kamod-ui",
+    "kamod-hooks",
+    "preactpress",
+    "npm-package",
+    "monorepo",
+    "frontend",
+    "webdev",
+    "developer-tools"
+  ],
+  "homepage": "https://kamod-ch.github.io/kamod-hooks/",
+  "bugs": {
+    "url": "https://github.com/kamod-ch/kamod-hooks/issues"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
