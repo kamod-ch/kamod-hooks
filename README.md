@@ -1,12 +1,25 @@
-# kamod-hooks
+<p align="center">
+  <img src=".github/assets/logo-kamod-hooks-dark.svg#gh-light-mode-only" alt="Kamod Hooks" width="280" />
+  <img src=".github/assets/logo-kamod-hooks-light.svg#gh-dark-mode-only" alt="Kamod Hooks" width="280" />
+</p>
 
-[![npm version](https://img.shields.io/npm/v/@kamod-ch/hooks)](https://www.npmjs.com/package/@kamod-ch/hooks)
-[![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](LICENSE)
-[![Preact](https://img.shields.io/badge/preact-10%2B-673ab8.svg)](https://preactjs.com/)
-[![Docs](https://img.shields.io/badge/docs-live-0ea5a4.svg)](https://kamod-ch.github.io/kamod-hooks/)
-[![Demo](https://img.shields.io/badge/demo-interactive-334155.svg)](https://kamod-ch.github.io/kamod-hooks/)
+<p align="center">
+  <a href="https://www.npmjs.com/package/@kamod-ch/hooks"><img src="https://img.shields.io/npm/v/%40kamod-ch%2Fhooks" alt="npm version" /></a>
+  <a href="https://github.com/kamod-ch/kamod-hooks/actions/workflows/deploy-pages.yml"><img src="https://github.com/kamod-ch/kamod-hooks/actions/workflows/deploy-pages.yml/badge.svg" alt="Docs deploy" /></a>
+  <a href="https://github.com/kamod-ch/kamod-hooks/stargazers"><img src="https://img.shields.io/github/stars/kamod-ch/kamod-hooks?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/kamod-ch/kamod-hooks/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" /></a>
+</p>
 
-[![kamod-hooks docs preview](https://github.com/kamod-ch/kamod-hooks/raw/main/assets/readme-banner.svg)](https://kamod-ch.github.io/kamod-hooks/)
+<p align="center">
+  <strong><a href="https://kamod-ch.github.io/kamod-hooks/">Live docs</a></strong> ·
+  <strong><a href="https://www.npmjs.com/package/@kamod-ch/hooks">npm</a></strong> ·
+  <strong><a href="https://github.com/kamod-ch/kamod-hooks">GitHub</a></strong> ·
+  <strong><a href="https://github.com/kamod-ch/kamod-hooks/issues">Issues</a></strong>
+</p>
+
+> If Kamod Hooks saves you time, **[star the repo](https://github.com/kamod-ch/kamod-hooks)** — it helps others discover the project.
+
+# Kamod Hooks
 
 Production-ready hooks for **Preact** — fast to adopt, easy to tree-shake, and built with **zero runtime dependencies** beyond `preact` itself.
 
@@ -355,3 +368,10 @@ pnpm docs:check
 ## License
 
 Released under the MIT License. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+
+---
+
+Built by Klaus Zahiragic | Kamod GmbH
+
+[Website](https://www.kamod.ch) ·
+[LinkedIn](https://www.linkedin.com/in/klauszahiragic/)

@@ -12,6 +12,10 @@ const githubRawBase = 'https://raw.githubusercontent.com/kamod-ch/kamod-hooks/ma
 
 function toCoreReadme(content) {
   return content
+    .replaceAll(
+      'src=".github/assets/',
+      `src="${githubRawBase}/.github/assets/`
+    )
     .replace(
       '[![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](LICENSE)',
       `[![License: MIT](https://img.shields.io/badge/license-MIT-0f766e.svg)](${githubRepoBase}/LICENSE)`
