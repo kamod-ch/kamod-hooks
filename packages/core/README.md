@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/kamod-ch/kamod-hooks/main/.github/assets/logo-kamod-signals-dark.svg#gh-light-mode-only" alt="Kamod Signals" width="280" />
-  <img src="https://raw.githubusercontent.com/kamod-ch/kamod-hooks/main/.github/assets/logo-kamod-signals-light.svg#gh-dark-mode-only" alt="Kamod Signals" width="280" />
+  <img src="https://raw.githubusercontent.com/kamod-ch/kamod-hooks/main/.github/assets/logo-kamod-hooks-dark.svg#gh-light-mode-only" alt="Kamod Hooks" width="280" />
+  <img src="https://raw.githubusercontent.com/kamod-ch/kamod-hooks/main/.github/assets/logo-kamod-hooks-light.svg#gh-dark-mode-only" alt="Kamod Hooks" width="280" />
 </p>
 
 <p align="center">
