@@ -25,7 +25,8 @@ export default defineConfig({
   },
   head: [
     ['link', { rel: 'icon', href: `${base}favicon.svg`, type: 'image/svg+xml' }],
-    ['link', { rel: 'apple-touch-icon', href: `${base}favicon.svg` }]
+    ['link', { rel: 'apple-touch-icon', href: `${base}favicon.svg` }],
+    ['link', { rel: 'stylesheet', href: `${base}styles/logo.css` }]
   ],
   transformHtml(html) {
     if (!includeMatomoImageTracker) return html

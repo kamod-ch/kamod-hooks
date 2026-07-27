@@ -4,12 +4,16 @@
   "type": "module",
   "description": "PreactPress documentation site for @kamod-ch/hooks",
   "scripts": {
+    "brand:sync": "kamod-brand-sync-docs --target public",
+    "predev": "pnpm run brand:sync",
+    "prebuild": "pnpm run brand:sync",
     "dev": "preactpress dev",
     "build": "preactpress build",
     "preview": "preactpress preview",
     "check": "node ./scripts/check-docs.mjs && preactpress check"
   },
   "devDependencies": {
+    "@kamod-ch/brand": "^0.1.0",
     "@kamod-ch/hooks": "workspace:*",
     "@kamod-ch/preactpress": "^2.0.0",
     "preact": "^10.29.3",

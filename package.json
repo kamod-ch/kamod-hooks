@@ -29,6 +29,7 @@
     "docs:preview": "pnpm --filter @kamod-hooks/docs preview",
     "clean": "pnpm --filter @kamod-ch/hooks clean && rm -rf packages/docs/dist",
     "sync:readmes": "node scripts/sync-readmes.mjs",
+    "brand:readme": "kamod-brand-readme --product Hooks --output .github/assets",
     "qa:publint": "pnpm --filter @kamod-ch/hooks publint",
     "qa:attw": "pnpm --filter @kamod-ch/hooks attw",
     "qa:package": "pnpm --filter @kamod-ch/hooks build && pnpm qa:publint && pnpm qa:attw",
@@ -41,6 +42,7 @@
     "release:dry": "node ./scripts/release.mjs patch --dry"
   },
   "devDependencies": {
+    "@kamod-ch/brand": "^0.1.0",
     "@types/node": "^25.9.2",
     "typescript": "~5.9.3"
   },

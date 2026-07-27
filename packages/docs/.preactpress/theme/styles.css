@@ -161,7 +161,7 @@ label { display: grid; gap: 0.4rem; margin-bottom: 0.85rem; }
   align-items: center;
   gap: 1rem;
 }
-.pp-title, .kh-logo {
+.pp-title, .kamod-logo {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -170,51 +170,11 @@ label { display: grid; gap: 0.4rem; margin-bottom: 0.85rem; }
   font-weight: 700;
   text-decoration: none;
 }
-.kh-logo {
+.pp-title .kamod-logo {
   gap: 0.5rem;
   align-items: center;
   font-family: inherit;
 }
-.kh-logo__kamod-wrap {
-  display: grid;
-  align-items: center;
-  height: 2rem;
-  flex-shrink: 0;
-}
-.kh-logo__kamod {
-  grid-area: 1 / 1;
-  display: block;
-  height: 2rem;
-  width: auto;
-  object-fit: contain;
-  justify-self: start;
-}
-.kh-logo__kamod--dark {
-  opacity: 0;
-  pointer-events: none;
-}
-.kh-logo__hooks {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 2rem;
-  color: var(--kh-brand-orange);
-  font-family: 'Quicksand', system-ui, sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  translate: 0 0.06rem;
-  -webkit-font-smoothing: antialiased;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) .kh-logo__kamod--light { opacity: 0; }
-  :root:not([data-theme]) .kh-logo__kamod--dark { opacity: 1; pointer-events: auto; }
-  :root:not([data-theme]) .kh-logo__hooks { translate: 0 0.05rem; }
-}
-:root[data-theme='dark'] .kh-logo__kamod--light { opacity: 0; }
-:root[data-theme='dark'] .kh-logo__kamod--dark { opacity: 1; pointer-events: auto; }
-:root[data-theme='dark'] .kh-logo__hooks { translate: 0 0.05rem; }
 .pp-nav-right, .pp-nav-links { display: flex; align-items: center; gap: 0.5rem; }
 .pp-nav-links a, .kh-theme-toggle {
   border: 2px solid transparent;
