@@ -4,17 +4,20 @@ import { isNumber } from '../utils';
 
 interface Handle {
   id: ReturnType<typeof setInterval> | ReturnType<typeof requestAnimationFrame>;
+  mode: 'interval' | 'raf';
 }
 
 const setRafInterval = (callback: () => void, delay: number = 0): Handle => {
   if (typeof requestAnimationFrame === 'undefined') {
     return {
       id: setInterval(callback, delay),
+      mode: 'interval',
     };
   }
   let start = Date.now();
   const handle: Handle = {
     id: 0,
+    mode: 'raf',
   };
   const loop = () => {
     const current = Date.now();
@@ -28,15 +31,12 @@ const setRafInterval = (callback: () => void, delay: number = 0): Handle => {
   return handle;
 };
 
-const cancelAnimationFrameIsNotDefined = (t: any): t is ReturnType<typeof setTimeout> => {
-  return typeof cancelAnimationFrame === 'undefined';
-};
-
 const clearRafInterval = (handle: Handle) => {
-  if (cancelAnimationFrameIsNotDefined(handle.id)) {
-    return clearInterval(handle.id);
+  if (handle.mode === 'interval') {
+    clearInterval(handle.id as ReturnType<typeof setInterval>);
+    return;
   }
-  cancelAnimationFrame(handle.id);
+  cancelAnimationFrame(handle.id as number);
 };
 
 function useRafInterval(

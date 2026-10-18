@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, useRef } from 'preact/hooks';
-import type { JSX } from 'preact';
+import type { CSSProperties } from 'preact';
 import useEventListener from '../useEventListener';
 import useLatest from '../useLatest';
 import useMemoizedFn from '../useMemoizedFn';
@@ -29,7 +29,7 @@ const useVirtualList = <T = any>(list: T[], options: Options<T>) => {
 
   const [targetList, setTargetList] = useState<{ index: number; data: T }[]>([]);
 
-  const [wrapperStyle, setWrapperStyle] = useState<JSX.CSSProperties>({});
+  const [wrapperStyle, setWrapperStyle] = useState<CSSProperties>({});
 
   const getVisibleCount = (containerHeight: number, fromIndex: number) => {
     if (isNumber(itemHeightRef.current)) {

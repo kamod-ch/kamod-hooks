@@ -1,4 +1,10 @@
 import "@testing-library/jest-dom/vitest";
+import { teardown } from "preact/test-utils";
+import { afterEach } from "vitest";
+
+afterEach(() => {
+  teardown();
+});
 
 class ResizeObserverStub {
   observe() {}

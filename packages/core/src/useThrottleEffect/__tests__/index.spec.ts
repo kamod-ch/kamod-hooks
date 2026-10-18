@@ -66,16 +66,16 @@ describe('useThrottleEffect', () => {
       { initialProps: 0 },
     );
 
+    expect(mockEffect.mock.calls.length).toBe(1);
+    expect(mockCleanUp.mock.calls.length).toBe(0);
+
+    hook2.rerender(1);
     await act(async () => {
-      expect(mockEffect.mock.calls.length).toBe(1);
-      expect(mockCleanUp.mock.calls.length).toBe(0);
-
-      hook2.rerender(1);
       await sleep(50);
-      hook2.unmount();
-
-      expect(mockEffect.mock.calls.length).toBe(1);
-      expect(mockCleanUp.mock.calls.length).toBe(1);
     });
+
+    hook2.unmount();
+    expect(mockEffect.mock.calls.length).toBe(1);
+    expect(mockCleanUp.mock.calls.length).toBe(1);
   });
 });

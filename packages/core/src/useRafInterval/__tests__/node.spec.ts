@@ -20,14 +20,28 @@ describe('useRafInterval', () => {
     vi.restoreAllMocks();
   });
   test('should downgrade to setInterval when requstAnimationFrame is undefined', () => {
-    Object.defineProperty(window, 'cancelAnimationFrame', { value: undefined });
+    const requestAnimationFrame = window.requestAnimationFrame;
+    const cancelAnimationFrame = window.cancelAnimationFrame;
+
+    Object.defineProperty(window, 'cancelAnimationFrame', { value: undefined, configurable: true });
     Object.defineProperty(window, 'requestAnimationFrame', {
       value: undefined,
+      configurable: true,
     });
     const callback = vi.fn();
-    setUp({ fn: callback, delay: FRAME_TIME });
+    const hook = setUp({ fn: callback, delay: FRAME_TIME });
     expect(callback).not.toHaveBeenCalled();
     vi.advanceTimersByTime(FRAME_TIME * 1.5);
     expect(callback).toHaveBeenCalledTimes(1);
+
+    Object.defineProperty(window, 'requestAnimationFrame', {
+      value: requestAnimationFrame,
+      configurable: true,
+    });
+    Object.defineProperty(window, 'cancelAnimationFrame', {
+      value: cancelAnimationFrame,
+      configurable: true,
+    });
+    hook.unmount();
   });
 });
